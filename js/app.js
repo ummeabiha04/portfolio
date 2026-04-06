@@ -121,27 +121,28 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (view === 'projects') {
                         const video = section.querySelector('video');
                         if (video) {
-                            // Professional Frictionless Unmute Strategy
-                            // 1. Start muted to guarantee it starts immediately without splash
                             video.muted = true;
                             video.volume = 1.0;
                             video.play().then(() => {
-                                console.log('Immediate muted playback started.');
-
-                                // 2. Add an invisible, high-priority listener for ANY user activity
-                                const unmuteOnActivity = () => {
+                                // Immediately try to unmute — this works when the user
+                                // arrived via a click (counts as a user gesture in most browsers)
+                                try {
                                     video.muted = false;
-                                    console.log('Unmuted on user activity.');
-                                    // Remove all listeners once unmuted
-                                    activityEvents.forEach(event => {
-                                        document.removeEventListener(event, unmuteOnActivity);
+                                    console.log('Immediately unmuted after deep-link click.');
+                                } catch (e) {
+                                    // Fallback: unmute on next user interaction
+                                    console.warn('Immediate unmute blocked, falling back to activity listener.');
+                                    const unmuteOnActivity = () => {
+                                        video.muted = false;
+                                        activityEvents.forEach(ev => {
+                                            document.removeEventListener(ev, unmuteOnActivity);
+                                        });
+                                    };
+                                    const activityEvents = ['mousedown', 'scroll', 'keydown', 'touchstart', 'mousemove'];
+                                    activityEvents.forEach(ev => {
+                                        document.addEventListener(ev, unmuteOnActivity, { once: true });
                                     });
-                                };
-
-                                const activityEvents = ['mousedown', 'scroll', 'keydown', 'touchstart', 'mousemove'];
-                                activityEvents.forEach(event => {
-                                    document.addEventListener(event, unmuteOnActivity, { once: true });
-                                });
+                                }
                             }).catch(err => {
                                 console.warn('Playback blocked:', err);
                             });
