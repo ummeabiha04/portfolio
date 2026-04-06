@@ -1,0 +1,281 @@
+/* Master CV Styling - Replicating original uk-resume look */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --black: #000000;
+  --dark-gray: #2d2d2d;
+  --medium-gray: #666666;
+  --light-gray: #999999;
+  --blue-accent: #004a99;
+  --white: #ffffff;
+  --border-color: #000000;
+
+  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --spacing-xs: 0.04rem;
+  --spacing-sm: 0.1rem;
+  --spacing-md: 0.2rem;
+  --spacing-lg: 0.25rem;
+  --spacing-xl: 0.35rem;
+  --spacing-section: 0.25rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  font-size: 8.5pt;
+  line-height: 1.25;
+  color: var(--black);
+  background: #f5f5f5;
+  padding: 0.15rem;
+}
+
+.resume {
+  max-width: 210mm;
+  min-height: 297mm;
+  margin: 0 auto;
+  background: var(--white);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 0.8rem 1.5rem;
+}
+
+.header {
+  padding-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-xs);
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--black);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-sm);
+}
+
+.header .title {
+  font-size: 0.8rem;
+  color: var(--black);
+  /* Matching work experience title blue */
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+  line-height: 1.4;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: 0.8rem;
+  color: var(--dark-gray);
+  margin-bottom: var(--spacing-sm);
+}
+
+.contact-info a {
+  color: var(--blue-accent);
+  text-decoration: underline;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+.contact-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.section {
+  margin-bottom: var(--spacing-section);
+}
+
+.section-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: var(--spacing-section);
+  padding-bottom: var(--spacing-xs);
+  border-bottom: 1.5px solid var(--black);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.summary {
+  font-size: 0.78rem;
+  line-height: 1.35;
+  color: var(--dark-gray);
+  text-align: justify;
+}
+
+.experience-item,
+.education-item {
+  margin-bottom: var(--spacing-lg);
+}
+
+.item-header {
+  margin-bottom: var(--spacing-xs);
+}
+
+.job-title,
+.degree {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--blue-accent);
+  margin-bottom: var(--spacing-xs);
+}
+
+.item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--spacing-lg);
+}
+
+.summary-section {
+  margin-top: 0.6rem !important;
+  margin-bottom: 0.6rem !important;
+}
+
+.projects-section .section-title {
+  margin-bottom: 0.4rem;
+  /* Reduced from 0.6rem to 0.4rem */
+}
+
+/* Specific spacing for Projects section */
+.projects-section .experience-item {
+  margin-bottom: 0.2rem; /* Tightened from 0.35rem to minimize gaps between products */
+}
+
+.projects-section .item-header {
+  margin-bottom: 0.1rem; /* Tightened from 0.2rem */
+}
+
+.publications-section .section-title {
+  margin-bottom: 0.1rem;
+  /* Minimal spacing for Publications title */
+}
+
+.certifications-section {
+  margin-bottom: 0.1rem !important;
+  /* Extremely tight space to Publications (reduced further from 0.3rem) */
+}
+
+.degree-meta {
+  color: var(--black);
+  font-weight: 700;
+  margin-left: 0.3rem;
+}
+
+.company {
+  font-size: 0.82rem;
+  color: var(--black);
+  font-weight: 400;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.institution {
+  font-size: 0.82rem;
+  color: var(--black);
+  font-weight: 400;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.date-range {
+  font-size: 0.75rem;
+  color: var(--medium-gray);
+  white-space: nowrap;
+}
+
+.experience-list {
+  list-style-type: disc;
+  padding-left: 1.2rem;
+  margin-top: 0.2rem;
+}
+
+.description ul {
+  margin-left: 1.2rem;
+  margin-top: 0.2rem;
+}
+
+.description li,
+.description p {
+  margin-bottom: 0.1rem;
+  line-height: 1.35;
+  color: var(--dark-gray);
+  font-size: 0.8rem;
+}
+
+.description strong {
+  color: var(--black);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-sm) var(--spacing-xl);
+}
+
+.skill-column {
+  list-style: none;
+}
+
+.skill-column li {
+  padding: 0.15rem 0;
+  color: var(--dark-gray);
+  font-size: 0.8rem;
+  position: relative;
+  padding-left: 0.8rem;
+}
+
+.skill-column li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--black);
+  font-weight: bold;
+}
+
+.tools-tech {
+  font-size: 0.8rem;
+  color: var(--medium-gray);
+  margin-top: 0.3rem;
+  font-style: italic;
+}
+
+.tools-tech strong {
+  color: var(--dark-gray);
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.5px;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 1.5cm 2cm;
+  }
+
+  body {
+    background: white;
+    padding: 0;
+  }
+
+  .resume {
+    max-width: 100%;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+  }
+}

@@ -1,15 +1,17 @@
 const portfolioData = {
     profile: {
         name: "Umme Abiha",
-        title: "Technical Product Innovator & Manager",
+        title: "MedTech Product Manager",
         tagline: "Translating Complex Clinical Signals into Scalable, AI-Enabled Medical Systems<br>Interdisciplinary Scientist | Clinical Systems Thinker | Product Architect",
         shortBio: "5+ years of experience leading AI-driven MedTech innovations. Proven expertise from 0 → 1 product lifecycle management, cross-functional leadership, and strategic roadmap execution.",
         email: "drummeabiha04@gmail.com",
         linkedin: "https://www.linkedin.com/in/umme-abiha-884296121/",
-        scholar: "https://scholar.google.com/citations?user=S5GISogAAAAJ&hl=en"
+        scholar: "https://scholar.google.com/citations?user=S5GISogAAAAJ&hl=en",
+        researchgate: "https://www.researchgate.net/profile/Umme-Abiha-2"
     },
     philosophy: {
         title: "How I Think About Healthcare Innovation",
+        image: "./assets/images/nicu_how_i_think.png",
         content: [
             "My thinking about healthcare innovation was shaped during early clinical immersion in a NICU. I remember a distressed parent repeatedly asking for updates about a critically ill newborn. At first glance, it appeared to be a communication gap. But deeper observation revealed something structural: the system was optimized for treatment execution, not for information transparency.",
             "Clinical data existed. Monitors were active. Decisions were being made. Yet there was no mechanism to translate complex physiological signals into structured, interpretable information for non-clinical stakeholders. That experience taught me discipline. Emotional intensity does not automatically justify product development. If a problem cannot survive ecosystem scrutiny, stakeholder incentives, workflow constraints, liability risk, economic viability, it does not deserve to become a device.",
@@ -18,11 +20,20 @@ const portfolioData = {
         ]
     },
     about: {
-        profileImage: "./assets/images/profile.jpg",
+        profileImage: "./assets/images/profile_final.png",
+        aboutImage: "./assets/images/about_conference.jpg",
+        headline: "I translate complex clinical signals into validated, AI-enabled medical systems that bridge the gap between bench and bedside.",
+        stats: [
+            { label: "Translational Funding Secured", value: "US$ 72K+" },
+            { label: "MedTech R&D Experience", value: "5+ Years" },
+            { label: "Intellectual Properties", value: "6" },
+            { label: "Peer Reviewed Publications", value: "19+" },
+            { label: "Research Citations", value: "153" }
+        ],
         bio: [
-            "I am a Technical Product Lead working at the intersection of AI, clinical medicine, and scalable healthcare systems. With 5+ years of experience building AI-driven MedTech products, I specialize in taking ideas from 0 → 1 — transforming complex clinical challenges into validated, deployable solutions.",
+            "I am a MedTech Product Manager working at the intersection of Clinical Device & SaMD Development and AI-Driven Healthcare Innovation. With 5+ years of experience building AI-driven MedTech products, I specialize in taking ideas from 0 → 1 — transforming complex clinical challenges into validated, deployable solutions.",
             "Trained in the IIT–AIIMS Joint Doctoral Programme in Medical Technology, I developed deep clinical immersion within tertiary hospital settings. Collaborating closely with clinicians, nurses, biomedical engineers, and administrators, I gained a systems-level understanding of healthcare workflows, enabling me to design products grounded in real-world constraints, not assumptions.",
-            "I have led the end-to-end development of multi-signal wearable devices and intelligent diagnostic platforms, from problem discovery and roadmap definition to prototyping, clinical validation, and regulatory strategy (FDA/CDSCO). My work has secured $72,000+ in funding as translational grants, generated 6 intellectual properties, and improved device accuracy by over 20% through AI/ML optimization significantly influencing treatment decisions.",
+            "I have led the end-to-end development of multi-signal wearable devices and intelligent diagnostic platforms, from problem discovery and roadmap definition to prototyping, clinical validation, and regulatory strategy (FDA/CDSCO). My work has secured US$ 72,000+ in funding as translational grants, generated 6 intellectual properties, and improved device accuracy by over 20% through AI/ML optimization significantly influencing treatment decisions.",
             "I think beyond features, balancing usability, safety, scalability, regulatory alignment, and commercial viability. My mission is to build ethical, data-driven healthcare products that create measurable impact, especially in diverse and resource-constrained settings."
         ],
         skills: [
@@ -37,11 +48,100 @@ const portfolioData = {
             "Framer"
         ]
     },
+    education: [
+        {
+            degree: "PhD in Medical Technology",
+            institution: "Indian Institute of Technology, Jodhpur & AIIMS, Jodhpur, India",
+            year: "2021 – 2026",
+            details: "(CGPA: 8.31)"
+        },
+        {
+            degree: "M-Tech Biotechnology",
+            institution: "Amity University, Noida, India",
+            year: "2019 – 2021",
+            details: "(Silver Medalist | CGPA: 9.46)"
+        },
+        {
+            degree: "PG Diploma in Intellectual Property Rights",
+            institution: "Indra Gandhi National Open University, India",
+            year: "2021"
+        },
+        {
+            degree: "B-Tech Biotechnology",
+            institution: "Amity University, Noida, India",
+            year: "2014 – 2018"
+        }
+    ],
+    experience: [
+        {
+            title: "Technical Product Lead",
+            organization: "IIT Jodhpur & AIIMS Jodhpur, India",
+            year: "Aug 2021 – Present"
+        },
+        {
+            title: "Design Thinking Facilitator",
+            organization: "Ivies Chase You",
+            year: "Jul 2025 – Present",
+            description: "Facilitated design thinking workshops, empathy mapping, and solution ideation."
+        },
+        {
+            title: "Peer Reviewer",
+            organization: "Journal of Bionic Engineering, Springer Nature",
+            year: "Dec 2024 – Feb 2025"
+        },
+        {
+            title: "Peer Reviewer",
+            organization: "BMJ Innovations",
+            year: "Nov 2024 – Jan 2025"
+        },
+        {
+            title: "Research Scholar",
+            organization: "NICPR-ICMR, India",
+            year: "Dec 2020 – May 2021"
+        },
+        {
+            title: "Research Scholar",
+            organization: "Amity University, Noida, India",
+            year: "2018 – 2019"
+        }
+    ],
     home: {
         impactHighlight: {
             image: "./assets/images/impact_quote.png",
-            text: "Contributing to this vision by leading collaborative MedTech innovations at the intersection of AIIMS and IIT Jodhpur."
-        }
+            text: "Contributing to this vision by leading collaborative MedTech innovations at the intersection of AIIMS and IIT Jodhpur"
+        },
+        testimonials: [
+            {
+                name: "Vinay Aradhya",
+                role: "Director of Product Management, Thomson Reuters",
+                location: "🇨🇦",
+                relationship: "Mentor",
+                date: "February 24, 2026",
+                text: "Umme is a curious, creative Product Manager who has built 0-1 product and figured out business model, GTM leading a team of product, design and engineering teams. Highly motivated, dedicated and passionate Product Manager. All the best, Umme.",
+                tags: ["Amazing problem solver", "Technically competent", "Analytical", "Detail-oriented", "Adaptable", "Rising star"],
+                image: "./assets/images/testimonials/vinay.png"
+            },
+            {
+                name: "Brennan Collins",
+                role: "Chief Product Officer, Unabated Products",
+                location: "🇺🇸",
+                relationship: "Mentor",
+                date: "February 17, 2026",
+                text: "Umme came in with humility and impressed with her depth of experience. She is a more accomplished product manager without the title than many PMs I know with it. Proactive in building out ways to communicate her experience and comprehensive in her product thinking.",
+                tags: ["Amazing problem solver", "Technically competent", "Raw intelligence", "Avid listener", "Proactive", "Receptive"],
+                image: "./assets/images/testimonials/brennan.png"
+            },
+            {
+                name: "Yadvendra Sahai",
+                role: "Business Advisor & Ex-Director",
+                location: "🇮🇳",
+                relationship: "Mentor",
+                date: "August 28, 2025",
+                text: "Umme was among those who stood out by showing exceptional adaptability in transitioning from a research-focused mindset to an entrepreneurial one. She led her team from the front and ensured completion of all projects and assignments within time and with full zeal. No doubt she carried the full team along with her.\n\nHer business presentations, delivered confidently, were thoughtful and genuine in content. What set her apart was that she used her depth of technical knowledge and also made vigorous efforts to understand the industry ecosystem. She showed a flair for translating knowledge into practical business opportunities.\n\nThroughout the program, Umme actively engaged with mentors and stakeholders to increase her learning. She consistently applied feedback constructively, refining her work and culminating in a well-executed final presentation that reflected both her learning and her innovative thinking.\n\nUmme navigated the time-intensive and demanding program well. Her openness to learning, ability to inspire peers, and clarity in communication stood out.\n\nShe will be a very suitable fit for leadership roles, particularly in project and innovation management. She would be a valuable asset and resource to any organization she chooses to work with.",
+                tags: ["Technically competent", "Entrepreneurial Mindset", "Leadership", "Valuable Asset", "Adaptable"],
+                image: "./assets/images/testimonials/yadvendra.png"
+            }
+        ]
     },
     operatingPrinciples: [
         { id: "01", text: "Clinical first, technology second." },
@@ -217,30 +317,53 @@ const portfolioData = {
     projects: [
         {
             title: "ShishuCare (AI-Enabled Wearable Patch Device)",
+            category: "AI IN NEONATOLOGY",
+            storyHeadline: "Can AI screening eliminate the neonatal treatment paradox?",
+            heroImage: "assets/images/shishucare_treatment_paradox.png",
             role: "Technical Product & R&D Lead",
             description: "Developed a 0→1 intelligent wearable device for non-invasive screening and continuous monitoring of neonatal jaundice. Ensured alignment with FDA and CDSCO regulatory pathways.<br><br>Integrated AI-driven diagnostic algorithms for optical signal denoising and device calibration, improving diagnostic accuracy by 20%+. Designed the system for scalable deployment across hospital and low-resource settings.<br><br>Secured ₹50 Lakhs (~US$55,000) in translational funding (TDP-9, TIH IIT Bombay) to accelerate product validation and commercialization.",
             tech: ["MedTech", "AI/ML in Healthcare", "Regulatory Strategy (FDA/CDSCO)", "Stakeholder Management", "Product Strategy", "Market Research", "Business Model Design", "Pitching", "Grants", "PRD", "DHF", "Value Proposition"],
-            link: "#"
+            link: "./case-studies/shishucare.html"
         },
         {
             title: "NICU Nursing Station Dashboard",
+            category: "CLINICAL SYSTEMS",
+            storyHeadline: "How can multi-patient visualization reduce operational risk in critical care?",
+            heroImage: "assets/images/nicu_dashboard_preview_v2.png",
             role: "Product Lead",
             description: "Built a centralized NICU monitoring dashboard enabling real-time multi-patient visualization and integrated clinical data on a single interface. Seamlessly integrated with the ShishuCare wearable ecosystem and mobile app. Reduced operational downtime by one month through workflow-driven UX optimization. Designed with HIPAA-aligned data security architecture.",
             tech: ["HealthTech", "Clinical Workflow Optimization", "UX/UI Strategy", "System Integration", "Data Security & Compliance", "Product Development"],
-            link: "#"
+            link: "./case-studies/nicu-dashboard.html"
         },
         {
             title: "Quantivitals – Non-Invasive Hemoglobin & SpO₂ Monitoring Platform",
+            category: "NON-INVASIVE TECH",
+            storyHeadline: "What if blood draws were no longer necessary for hemoglobin monitoring?",
+            heroImage: "assets/images/quantivitals_device_action_1772265034139.png",
             role: "TECHNICAL PRODUCT LEAD",
             description: "Led the product development of a non-invasive optical monitoring device for continuous hemoglobin and oxygen saturation assessment in critical care. Defined product requirements, system architecture, and regulatory pathway (CDSCO) to translate a clinical pain point into a scalable bedside monitoring solution.<br><br>Drove cross-functional collaboration across engineering and clinical stakeholders to build a deployable, workflow-aligned device designed to reduce dependency on invasive blood draws while maintaining clinical reliability.<br><br>Secured ₹15 Lakhs (~US$18,000) in MSME funding to support product development and validation.",
             tech: ["MedTech Product Development", "Ecosystem Mapping", "Regulatory Strategy (CDSCO)", "Maintaining Design Files", "Pitching", "Grants", "Stakeholder Alignment"],
-            link: "#"
+            link: "./case-studies/quantivitals.html"
         },
         {
             title: "TremoREST (Wearable Therapeutic Glove for Parkinson’s Tremors)",
             role: "Product & R&D Lead",
+            category: "WEARABLE NEUROTECH",
+            storyHeadline: "Can a glove restore the stillness Parkinson's steals?",
+            heroImage: "./assets/images/tremorest_hero.png",
             description: "Conceptualized and led the development of TremoREST, a wearable assistive glove designed to reduce resting tremors in patients with Parkinson’s disease.<br><br>Engineered using ergonomic biomechanical principles and breathable, patient-compliant fabric to enable prolonged wear and daily usability. The device focused on non-invasive tremor stabilization through mechanical damping and motion-modulation strategies.<br><br>Designed with a user-centered approach incorporating patient comfort, clinician feedback, and real-world usability constraints to ensure practical deployment in home-care settings.",
             tech: ["NeuroTech", "Wearable Therapeutics", "Assistive Medical Devices", "Biomechanics", "Human-Centered Design", "Clinical Need Validation", "Prototype Development", "Product Concept Strategy"],
+            link: "#"
+        },
+        {
+            title: "AI Email Triage Agent",
+            category: "AI AUTOMATION",
+            storyHeadline: "Can speed be a core feature in high-stakes clinical triage?",
+            heroImage: "assets/images/email_triage_hero.png",
+            video: "assets/videos/email_triage_demo.mp4",
+            role: "AI Product Engineer",
+            description: "Developed an autonomous AI agent using n8n and Groq (Llama 3.1) to triage high-stakes MedTech communications. Engineered a custom logic chain that performs real-time metadata cleaning and intent-based sorting. Pivoted to Groq for 10x faster inference, enabling a seamless 'Verification Layer' that preserves human-in-the-loop integrity while reducing drafting time by 90%.",
+            tech: ["n8n", "Groq", "Llama 3.1", "Gmail API", "Prompt Engineering", "Workflow Automation", "Human-in-the-loop", "MedTech Operations"],
             link: "#"
         }
     ],
@@ -286,156 +409,100 @@ const portfolioData = {
         {
             title: "Microsoft AI Product Manager Professional Certificate",
             issuer: "Microsoft",
-            date: "Ongoing",
-            logo: "assets/images/logos/microsoft_coursera.png",
-            description: "Professional Certificate covering AI product management strategies, including Enterprise Product Management Fundamentals, Market Research & Competitive Analysis, Product Strategy & Roadmapping, Product Design UX/UI Fundamentals and Product Launch & Post-launch Management."
-        },
-        {
-            title: "Create a Product Design Brainstorming with Miro",
-            issuer: "Coursera",
-            date: "JAN 2026",
-            logo: "assets/images/logos/coursera.png",
-            description: "Skills: Product Discovery, Agile Workflows, SCAMPER Framework, User Personas, User Journey Mapping, Structured Ideation"
-        },
-        {
-            title: "Agile Project: Product Prototype Touchpoint Analysis in Miro",
-            issuer: "Coursera",
-            date: "JAN 2026",
-            logo: "assets/images/logos/coursera.png",
-            description: "Focused on product prototype touchpoint analysis using Agile methodologies."
-        },
-        {
-            title: "PRAMAN: Workshop on Systematic Review and Meta-analysis",
-            issuer: "School of Public Health, AIIMS",
-            date: "April 2025",
-            logo: "assets/images/logos/aiims_gold.png",
-            description: "Promoting, Research, Applied Evidence and Meta-analyses for Novel Insights."
-        },
-        {
-            title: "I-NDUCT: Entrepreneurial Mindset & Business Acumen Program (Cohort 08)",
-            issuer: "Gopalakrishnan Deshpande Centre for Innovation and Entrepreneurship, IIT Madras",
-            date: "June 2024 - Aug 2024",
-            logo: "assets/images/logos/gdc_iitm.png",
-            description: "40-day intensive experiential program designed to build entrepreneurial mindset and business acumen regarding Stakeholder Mapping, Ecosystem Discovery, and Market Opportunity Navigation."
-        },
-        {
-            title: "Grant Writing Workshop",
-            issuer: "CCAMP and TISC-IIT Jodhpur",
-            date: "2024",
-            logo: "assets/images/logos/ccamp_tisc.png",
-            description: "Focused on strategies for effective fundraising and writing successful grant proposals."
+            logo: "assets/images/logos/microsoft_new.png"
         },
         {
             title: "Design Thinking for Innovation",
-            issuer: "University of Virginia (Darden School of Business) | Coursera",
-            date: "DEC 2023",
-            logo: "assets/images/logos/uva_coursera.png",
-            description: "Focus Areas: Human-Centered Design • Business Model Innovation • Idea Generation Frameworks • Visualization & Mind Mapping • Learning Launch Experiments • Strategic Opportunity Identification • Product Storytelling"
+            issuer: "University of Virginia (Darden School of Business)",
+            logo: "assets/images/logos/uva_new.png"
         },
         {
             title: "Stanford Biodesign Bootcamp - Fundamentals of Biodesign Process",
             issuer: "Stanford University",
-            date: "July 2023",
-            logo: "assets/images/logos/stanford.png",
-            description: "Skills: Biodesign Process, Clinical Needs Validation, Problem Framing & Opportunity Analysis, Stakeholder Mapping, Requirements Definition, Concept Ideation."
+            logo: "assets/images/logos/stanford_new_v2.png"
         },
         {
-            title: "Basic Life Support (BLS)",
-            issuer: "IIT and AIIMS Jodhpur",
-            date: "February 2023",
-            logo: "assets/images/logos/iitj_aiims_joint.png",
-            description: "Training to promptly recognize severe life-threatening emergencies, give high quality chest compressions, and deliver appropriate ventilations."
+            title: "Interactive Dashboard Fundamentals Power BI",
+            issuer: "Coursera",
+            logo: "assets/images/logos/coursera_new.png"
+        },
+        {
+            title: "I-NDUCT: Entrepreneurial Mindset & Business Acumen Program (Cohort 08)",
+            issuer: "Gopalakrishnan Deshpande Centre for Innovation and Entrepreneurship, IIT Madras",
+            logo: "assets/images/logos/gdc_iitm.png"
+        },
+        {
+            title: "Create a Product Design Brainstorming with Miro",
+            issuer: "Coursera",
+            logo: "assets/images/logos/coursera_new.png"
+        },
+        {
+            title: "Agile Project: Product Prototype Touchpoint Analysis",
+            issuer: "Coursera",
+            logo: "assets/images/logos/coursera_new.png"
+        },
+        {
+            title: "PRAMAN: Workshop on Systematic Review and Meta-analysis",
+            issuer: "School of Public Health, AIIMS",
+            logo: "assets/images/logos/aiims_new.png"
+        },
+        {
+            title: "Grant Writing Workshop",
+            issuer: "Centre for Cellular and Molecular Platforms (C-CAMP), DBT, Govt of India",
+            logo: "assets/images/logos/ccamp_tisc.png"
         },
         {
             title: "Good Clinical Practice (GCP)",
-            issuer: "AIIMS Jodhpur, Shodh Clinical Solutions, Dr. Reddy’s Laboratories",
-            date: "January 2022",
-            logo: "assets/images/logos/aiims_drreddys.png",
-            description: "Successfully completed cognitive and skills evaluations for the Good Clinical Practice Program."
-        },
-        {
-            title: "COVID-19: Operational Planning Guidelines and COVID-19 Partners Platform",
-            issuer: "World Health Organization (WHO)",
-            date: "April 2020",
-            logo: "assets/images/logos/who.png",
-            description: "Successfully completed the program to support country preparedness and response."
-        },
-        {
-            title: "Clinical Care Severe Acute Respiratory Infections",
-            issuer: "World Health Organization (WHO)",
-            date: "April 2020",
-            logo: "assets/images/logos/who.png",
-            description: "Successfully completed the cognitive and skills evaluations for clinical care of severe acute respiratory infections."
-        },
-        {
-            title: "International English Language Testing System (IELTS)",
-            issuer: "IELTS",
-            date: "February 2018",
-            logo: "assets/images/logos/ielts.png",
-            description: "Acquired an overall Band score of 8 in Academics Reading and Writing module."
-        },
-        {
-            title: "Green Revolution Global Certification Program",
-            issuer: "International Center for Culture and Education (supported by UN Framework Convention on Climate Change)",
-            date: "July 2016",
-            logo: "assets/images/logos/unfccc.png",
-            description: "Completed with an Activity score of 'A'. Educate, Inspire & Act Against Climate Change."
+            issuer: "AIIMS Jodhpur",
+            logo: "assets/images/logos/aiims_new.png"
         }
     ],
     awards: [
         {
-            title: "Technology Development Grant (TDP-9)",
+            title: "Technology Development Grant (TDP-9) worth US$55,000",
             organization: "TIH Foundation IOT & IOE, IIT Bombay",
             year: "Sep 2025",
             description: "Associated with IIT Jodhpur and AIIMS Jodhpur. Secured funding support of ₹50 Lakhs (approx. US$55,000) to foster commercialization of technologies and bridge the gap between academia and industry, specifically in the domain of MedTech devices for early diagnosis and point-of-care."
         },
         {
-            title: "Best Oral Presentation in Health Sciences",
-            organization: "Society of Young Biomedical Scientists, India and AIIMS, New Delhi",
-            year: "Dec 2024",
-            description: "Recognized for the Best Oral Presentation in the Health Sciences Category."
-        },
-        {
             title: "Cash prize - Young Researcher Award",
             organization: "Society of Young Biomedical Scientists, India and AIIMS, New Delhi",
-            year: "Dec 2024",
-            description: "Honored with the Young Researcher Award and a cash prize for outstanding contributions."
+            year: "Dec 2024"
+        },
+        {
+            title: "Best Oral Presentation in Health Sciences",
+            organization: "Society of Young Biomedical Scientists, India and AIIMS, New Delhi",
+            year: "Dec 2024"
         },
         {
             title: "Student Head - Scientific Events",
             organization: "Indian Conference on MedTech Innovations (IIT Jodhpur & AIIMS Jodhpur)",
-            year: "Feb 2024",
-            description: "Led the organization of scientific events for the conference."
-        },
-        {
-            title: "Second Position - iStart Ideathon Rajasthan",
-            organization: "iStart and Tinkerly",
-            year: "Aug 2023",
-            description: "Secured the Second Position at the college level in the iStart Ideathon Rajasthan, recognized with a cash prize for demonstrating exceptional enthusiasm, creativity, and innovative spirit."
-        },
-        {
-            title: "Best Need Validation Award - Medical Device Hackathon (MEDHA)",
-            organization: "BETIC, IIT Bombay",
-            year: "May 2023",
-            description: "Awarded for the best validation of a clinical need."
+            year: "Feb 2024"
         },
         {
             title: "Scientific Chair & Student Head",
             organization: "Indian Conference on MedTech Innovations 2023",
-            year: "Feb 2023",
-            description: "Served as the Scientific Chair and Student Head for the conference."
+            year: "Feb 2024"
+        },
+        {
+            title: "Second Position - iStart Ideathon Rajasthan",
+            organization: "iStart and Tinkerly",
+            year: "Aug 2023"
+        },
+        {
+            title: "Best Need Validation Award - Medical Device Hackathon (MEDHA)",
+            organization: "BETIC, IIT Bombay",
+            year: "May 2023"
         },
         {
             title: "Second Position in Scientific Poster Presentation",
             organization: "Indian Conference of MedTech Innovations 2023",
-            year: "Feb 2023",
-            description: "Achieved second position with a cash prize in the Scientific Poster Presentation category."
+            year: "Feb 2023"
         },
         {
             title: "Best Poster Presentation in Pharmaceutical Sciences",
             organization: "Society of Young Biomedical Scientists (SYBS), India (NBRCOM-2021)",
-            year: "Dec 2021",
-            description: "Received the Best Poster Presentation award along with a cash prize."
+            year: "Dec 2021"
         },
         {
             title: "Citation Award for Institutional Representation",
@@ -452,14 +519,12 @@ const portfolioData = {
         {
             title: "Ph.D Research Fellowship",
             organization: "Ministry of Human Resource and Development (MHRD), Govt. of India",
-            year: "July 2021",
-            description: "Recipient of the prestigious government research fellowship associated with AIIMS Jodhpur & IIT Jodhpur."
+            year: "July 2021"
         },
         {
             title: "All India Rank 14 - IPR Olympiad",
             organization: "ISERD-INDIA",
-            year: "Oct 2019",
-            description: "Secured All India Rank 14 in India's first Intellectual Property Rights Entrance exam."
+            year: "Oct 2019"
         }
     ],
     conferences: [
@@ -469,7 +534,7 @@ const portfolioData = {
             location: "IIT Madras",
             date: "Feb 2025",
             role: "Exhibitor & Product Presenter",
-            summary: "Represented the IIT Jodhpur R&D exhibitors’ team at IInvenTiv 2025, showcasing healthcare and medtech innovations to global industry leaders, policymakers, investors, and research organizations. Engaged with cross-sector stakeholders on translational pathways, scalability, and real-world deployment of healthcare technologies."
+            summary: "Showcased MedTech innovations at India's largest R&D fair, engaging global industry leaders and policymakers on translational pathways."
         },
         {
             title: "National Biomedical Research Competition (NBRCOM 2024)",
@@ -477,7 +542,7 @@ const portfolioData = {
             location: "AIIMS New Delhi",
             date: "Dec 2024",
             role: "Product-Oriented Innovation Presentation",
-            summary: "Presented a product-focused biomedical innovation emphasizing scalability, clinical relevance, and real-world healthcare impact. Recognized with the Young Researcher Award for translational innovation bridging research and product development."
+            summary: "Presented scalable biomedical innovations; recipient of the Young Researcher Award for bridging research and product development."
         },
         {
             title: "NAMSCON 2024 – National Academy of Medical Sciences",
@@ -485,7 +550,7 @@ const portfolioData = {
             location: "AIIMS Jodhpur",
             date: "Nov 2024",
             role: "Product Innovation Showcase",
-            summary: "Showcased a cost-effective, non-invasive neonatal care technology aligned with clinical workflows and accessibility in diverse healthcare settings. The platform addressed real-world gaps in newborn care through system-level and data-driven design."
+            summary: "Presented non-invasive neonatal care technology designed for clinical integration and accessibility in diverse healthcare settings."
         },
         {
             title: "Indian Conference on MedTech Innovations (ICMI 2024)",
@@ -493,7 +558,7 @@ const portfolioData = {
             location: "IIT Jodhpur & AIIMS Jodhpur",
             date: "2024",
             role: "Core Organizing Member & Student Head, Scientific Committee",
-            summary: "Led the planning and execution of scientific and innovation proceedings for a national medtech conference bringing together clinicians, engineers, researchers, and industry stakeholders. Oversaw session coordination, speaker engagement, and conference flow, ensuring alignment with translational and innovation-driven objectives."
+            summary: "Led scientific committee proceedings for a national MedTech forum, coordinating speakers and translational innovation sessions."
         },
         {
             title: "Global Bio-India 2023",
@@ -501,7 +566,7 @@ const portfolioData = {
             location: "New Delhi",
             date: "Dec 2023",
             role: "Delegate & Product Presenter",
-            summary: "Represented the IIT–AIIMS Joint MedTech Programme at Global Bio-India, engaging with the biotech and medtech ecosystem on emerging technologies, innovation trends, and commercialization opportunities within the Indian healthcare landscape."
+            summary: "Represented IIT–AIIMS MedTech excellence, engaging with the biotech ecosystem on emerging healthcare technology commercialization."
         },
         {
             title: "IIT–AIIMS Joint Conclave & Workshop (JCSCTE 2023)",
@@ -509,7 +574,7 @@ const portfolioData = {
             location: "IIT Jodhpur & AIIMS Jodhpur",
             date: "2023",
             role: "Core Organizing Member & Scientific Proceedings Lead",
-            summary: "Contributed to organizing a joint conclave focused on advanced biomedical technologies including cellular therapy, gene therapy, and tissue engineering. Led scientific sessions and facilitated interdisciplinary dialogue across academia and translational research."
+            summary: "Organized scientific sessions on cellular/gene therapy, facilitating interdisciplinary dialogue across academia and translational research."
         },
         {
             title: "Indian Conference on MedTech Innovations (ICMI 2023)",
@@ -517,7 +582,7 @@ const portfolioData = {
             location: "IIT Jodhpur & AIIMS Jodhpur",
             date: "Feb 2023",
             role: "Scientific Chair & Student Head",
-            summary: "Provided leadership for conference planning and scientific programming at a national medtech forum. Awarded Second Prize for Best Poster Presentation in the Medical Device category for innovation in healthcare technology."
+            summary: "Awarded Second Prize for Best Poster in Medical Devices; provided leadership for national MedTech forum planning."
         },
         {
             title: "INAE–SERB Youth Conclave 2022",
@@ -525,16 +590,19 @@ const portfolioData = {
             location: "IIT Jodhpur",
             date: "2022",
             role: "Top 6 Finalist – Digital Healthcare Innovation",
-            summary: "Selected among the Top 6 finalists for a technical presentation in Digital Healthcare at a national youth conclave organized in collaboration with the Indian National Academy of Engineering (INAE)."
+            summary: "Selected as a Top 6 national finalist for Digital Healthcare innovation at the INAE–SERB Youth Conclave."
         },
         {
-            title: "Early Academic & Translational Conference Engagement (2018–2021)",
-            summary: "Participated in selected national conferences and competitions focused on pharmaceutical sciences, translational engineering, regenerative medicine, healthcare IPR, and biomedical research, building a strong foundation in scientific rigor and early-stage innovation.",
-            isSummary: true
-        }
+            title: "National Biomedical Research Competition (NBRCOM 2021)",
+            event: "NBRCOM 2021",
+            location: "AIIMS New Delhi",
+            date: "Dec 2021",
+            role: "Product-Oriented Innovation Presentation",
+            summary: "Product-Oriented Innovation Presentation where i was awarded best oral presentation."
+        },
     ],
     cv: {
-        downloadLink: "#" // You can host the PDF later
+        downloadLink: "javascript:void(0)" // Disabled as requested
     },
     news: [
         {

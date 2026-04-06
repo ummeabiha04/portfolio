@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShishuCare - Case Study | Umme Abiha</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="protect.js" defer></script>
+    <style>
+        /* Problem Hero Styling */
+        .problem-hero {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 3rem;
+            background: #1a1a1a;
+            color: #fff;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .problem-hero-header {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .problem-hero-stat {
+            padding: 1.5rem;
+            text-align: center;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .problem-hero-stat:last-child {
+            border-right: none;
+        }
+
+        .problem-hero-stat strong {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 0.2rem;
+            color: #fff;
+        }
+
+        .problem-hero-stat p {
+            font-size: 0.8rem;
+            margin: 0;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.3;
+        }
+
+        .stat-sublabel {
+            display: block;
+            color: var(--accent-primary);
+            font-size: 0.75rem;
+            margin-top: 0.2rem;
+            font-weight: 600;
+        }
+
+        .problem-hero-body {
+            position: relative;
+            height: 400px;
+            display: flex;
+            align-items: flex-end;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .problem-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.2) 60%, transparent 100%);
+        }
+
+        .problem-hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 2.5rem;
+            max-width: 800px;
+        }
+
+        .problem-hero-content h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            color: #fff;
+        }
+
+        .problem-hero-content p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .problem-hero-header {
+                grid-template-columns: 1fr;
+            }
+
+            .problem-hero-stat {
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .problem-hero-body {
+                height: 500px;
+            }
+        }
+
+        /* Collage Section */
+        .side-effects-collage {
+            background: #fff;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid #eee;
+        }
+
+        .collage-title {
+            color: var(--accent-primary);
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .collage-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin: 0 auto;
+        }
+
+        .collage-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            background: #ffffff;
+            border: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .collage-img {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: contain;
+            display: block;
+            border-radius: 0;
+        }
+
+        @media (max-width: 900px) {
+            .collage-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .collage-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Hover parallax/zoom effect for images */
+        .img-hover-zoom {
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .img-hover-zoom img {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transform-origin: center center;
+            cursor: zoom-in;
+        }
+
+        .img-hover-zoom img:hover {
+            transform: scale(1.07);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+        }
+
+        .top-impact-label {
+            background: #1e40af;
+            /* Deep Strategic Blue */
+            color: #fff;
+            padding: 12px 24px;
+            font-weight: 800;
+            font-size: 0.95rem;
+            letter-spacing: 1.5px;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+        }
+
+        .blue-italic {
+            color: #1e40af;
+            font-style: italic;
+            font-weight: 700;
+        }
+
+        /* Legacy MoSCoW for visibility override if needed */
+        .diagnostic-gap-card {
+            border-top: 4px solid var(--accent-secondary);
+        }
+
+        .blind-spot-card {
+            border-top: 4px solid var(--accent-risk);
+        }
+
+        .failure-point-card {
+            border: 3px solid #007bff !important;
+            box-shadow: 0 0 20px rgba(0, 123, 255, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .failure-point-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 123, 255, 0.25);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <a href="../index.html" class="back-link">← Back to Portfolio</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="case-study-hero">
+        <div class="hero-content">
+            <div class="client-name">AIIMS Jodhpur and IIT Jodhpur • 2021-Present</div>
+            <h1 class="project-title">ShishuCare: Compact Non-Invasive Jaundice Monitor</h1>
+
+            <div class="top-impact-strip">
+                <div class="top-impact-label">Impact</div>
+                <div class="top-impact-items">
+                    <div class="top-impact-item">
+                        <strong>Clinical Trust:</strong> ↑20% Accuracy ensuring better treatment outcomes
+                    </div>
+                    <div class="top-impact-item">
+                        <strong>GTM Funding:</strong> $55k+ Secured via India National Health Mission (INAP)
+                    </div>
+                    <div class="top-impact-item">
+                        <strong>Defensible Moat:</strong> 2 Patents + Design; built Strategic IP Barrier
+                    </div>
+                    <div class="top-impact-item">
+                        <strong>Adoption Lever:</strong> 6min → 20s eliminating Nursing Workflow Friction
+                    </div>
+                </div>
+            </div>
+
+            <p
+                style="font-size: 1.15rem; color: #475569; font-style: italic; text-align: left; max-width: 900px; margin: 1.5rem 0 0; line-height: 1.6; letter-spacing: 0.2px;">
+                Led the 0→1 development of India's first skin-tone-agnostic neonatal jaundice monitor, improving
+                diagnostic accuracy by 20%, reducing screening time from 6 minutes to 20 seconds, developing the
+                Go-To-Market strategy, and building the regulatory and IP foundation for national-scale deployment.
+            </p>
+
+            <div class="project-meta">
+                <div class="meta-combo-tag">
+                    <strong>Role:</strong> Technical Product Lead — Owned product strategy, clinical validation design,
+                    and cross-functional alignment
+                </div>
+                <div class="meta-combo-tag">
+                    <strong>Drove:</strong> 20% accuracy gain via AI signal denoising • 6 min → 20 sec screening time •
+                    $55K+ grant funding secured • 2 patents filed • ICMR & MoE national recognition
+                </div>
+                <div class="meta-combo-tag">
+                    <strong>Skills Applied:</strong> Product Strategy • Stakeholder Management • PRD • Market Sizing
+                    (81,725 facilities) • Regulatory Architecture • Clinical Research Design • IP Management
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="case-study-container">
+        <article class="main-content">
+            <section id="problem" class="content-section">
+                <span class="section-label">01 The Problem</span>
+                <h2 class="section-title">Newborn Jaundice: A Race Against Time and Systemic Failure</h2>
+
+                <div class="problem-hero">
+                    <div class="problem-hero-header">
+                        <div class="problem-hero-stat">
+                            <strong>25 Million</strong>
+                            <p>Annual Births<br><span class="stat-sublabel">(Screening Need)</span></p>
+                        </div>
+                        <div class="problem-hero-stat">
+                            <strong>2.5 Million+</strong>
+                            <p>Undergo Phototherapy<br><span class="stat-sublabel">(Treatment Demand)</span></p>
+                        </div>
+                        <div class="problem-hero-stat">
+                            <strong>119 / 100k</strong>
+                            <p>Extreme Cases<br><span class="stat-sublabel">(Low-Resource Regions)</span></p>
+                        </div>
+                        <div class="problem-hero-stat">
+                            <strong>22.7%</strong>
+                            <p>Fatality Rate<br><span class="stat-sublabel">(Without Intervention)</span></p>
+                        </div>
+                    </div>
+                    <div class="problem-hero-body" style="background-image: url('research_3.jpg');">
+                        <div class="problem-hero-overlay"></div>
+                        <div class="problem-hero-content">
+                            <h3>Jaundice is a race against permanent brain damage.</h3>
+                            <p>
+                                Every minute counts. Delayed diagnosis leads to irreversible neurological
+                                and auditory disorders, turning a treatable condition into a lifelong disability
+                                or a
+                                fatal outcome.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Narrative Bridge -->
+                <p class="text-block"
+                    style="text-align: center; font-style: italic; color: #666; margin: 3rem auto; max-width: 800px; font-size: 1.25rem; line-height: 1.6;">
+                    If jaundice is a race, our current healthcare ecosystem is running with a blindfold.
+                    The scale is massive, but we face <span style="font-weight: 700; color: var(--accent-primary);">two
+                        critical
+                        failure points</span>.
+                </p>
+
+                <div class="insight-grid">
+                    <div class="insight-card highlight-card failure-point-card">
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.75rem;">
+                            <span class="research-badge research-badge--blue">Shadowing</span>
+                            <span class="research-badge research-badge--blue">Stakeholder</span>
+                            <span class="research-badge research-badge--blue">Secondary</span>
+                        </div>
+                        <h4 style="color: var(--accent-primary);">Failure Point 1: The Danger of "Eyeballing"
+                        </h4>
+                        <p style="font-size: 1rem; color: #555; line-height: 1.5;">
+                            In rural PHCs/CHCs, doctors lack any measurement tools. They rely on <strong>visual
+                                inspection</strong>—or "eyeballing"—to guess the jaundice level.
+                            This guesswork is the primary reason the race is lost before it even begins.
+                        </p>
+                        <div style="margin-top: 1.5rem; display: flex; justify-content: center;">
+                            <div class="img-hover-zoom" style="width: 100%; max-width: 500px;">
+                                <img src="/Users/ummeabiha/.gemini/antigravity/brain/f07da684-45fa-43f1-b4c1-66131cb65364/uploaded_media_1771724764457.jpg"
+                                    alt="Visual Inspection in Rural Setting"
+                                    style="width: 100%; height: 280px; object-fit: cover; display: block; border-radius: 8px;">
+                            </div>
+                        </div>
+                        <div class="urban-caption"
+                            style="text-align: center; margin-top: 0.75rem; font-size: 0.95rem; color: #444; line-height: 1.5;">
+                            <span class="blue-italic">Visual inspection</span>: Delayed diagnosis leads to
+                            lifelong
+                            neurological and auditory disorders
+                        </div>
+                    </div>
+
+                    <div class="insight-card blind-spot-card highlight-card failure-point-card">
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.75rem;">
+                            <span class="research-badge research-badge--blue">Shadowing</span>
+                            <span class="research-badge research-badge--blue">Stakeholder</span>
+                            <span class="research-badge research-badge--blue">Secondary</span>
+                        </div>
+                        <h4 style="color: var(--accent-primary);">Failure Point 2: The Urban Monitoring Gap</h4>
+                        <p style="font-size: 1rem; color: #555; line-height: 1.5;">
+                            Even in high-tech NICUs, the race is slowed by <strong>4–8 hour lab delays</strong>
+                            for
+                            invasive blood tests.
+                            Moreover, current non-invasive devices are skin-tone biased, showing up to
+                            <strong>30% error
+                                rates</strong> on darker skin.
+                        </p>
+                        <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1.5rem;">
+                            <div>
+                                <div class="img-hover-zoom">
+                                    <img src="/Users/ummeabiha/.gemini/antigravity/brain/f07da684-45fa-43f1-b4c1-66131cb65364/uploaded_media_0_1771723904420.png"
+                                        alt="Invasive blood draw"
+                                        style="width: 100%; height: 280px; object-fit: cover; display: block; border-radius: 8px;">
+                                </div>
+                                <div
+                                    style="text-align: center; margin-top: 0.75rem; font-size: 0.95rem; color: #444; line-height: 1.5;">
+                                    <span class="blue-italic">Invasive</span>: Multiple painful blood draws with
+                                    4–8
+                                    hour lab delays
+                                </div>
+                            </div>
+                            <div>
+                                <div class="img-hover-zoom">
+                                    <img src="/Users/ummeabiha/.gemini/antigravity/brain/f07da684-45fa-43f1-b4c1-66131cb65364/uploaded_media_1_1771723904420.png"
+                                        alt="Inaccurate skin measurement"
+                                        style="width: 100%; height: 280px; object-fit: cover; display: block; border-radius: 8px;">
+                                </div>
+                                <div
+                                    style="text-align: center; margin-top: 0.75rem; font-size: 0.95rem; color: #444; line-height: 1.5;">
+                                    <span class="blue-italic">Non-Invasive</span>: Skin measurements highly
+                                    inaccurate
+                                    in dark skin newborns
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Side Effects Collage (Merged with Paradox) -->
+                <div class="side-effects-collage">
+                    <h4 class="collage-title">The Consequence: The Treatment Paradox</h4>
+                    <p
+                        style="font-size: 1rem; color: #333; text-align: center; margin-left: auto; margin-right: auto; margin-bottom: 2rem; max-width: 850px; line-height: 1.7;">
+                        Because our diagnosis is often slow or biased, the <strong>2.5 Million</strong> babies
+                        under
+                        therapy are managed reactively.
+                        Without precision data, treatment duration is extended unnecessarily, exposing newborns
+                        to
+                        prolonged blue light and avoidable clinical complications.
+                    </p>
+                    <h5
+                        style="text-align: center; color: #666; font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.5px;">
+                        Long duration of treatment causes
+                    </h5>
+                    <div class="collage-grid">
+                        <div class="collage-item img-hover-zoom">
+                            <img src="/Users/ummeabiha/.gemini/antigravity/brain/f07da684-45fa-43f1-b4c1-66131cb65364/uploaded_media_0_1771722794711.png"
+                                alt="Dehydration" class="collage-img">
+                        </div>
+                        <div class="collage-item img-hover-zoom">
+                            <img src="/Users/ummeabiha/.gemini/antigravity/brain/f07da684-45fa-43f1-b4c1-66131cb65364/uploaded_media_1771723329870.png"
+                                alt="Purpuric Rashes" class="collage-img">
+                        </div>
+                        <div class="collage-item img-hover-zoom">
+                            <img src="/Users/ummeabiha/.gemini/antigravity/brain/f07da684-45fa-43f1-b4c1-66131cb65364/uploaded_media_2_1771722794711.png"
+                                alt="Bronze baby syndrome" class="collage-img">
+                        </div>
+                        <div class="collage-item img-hover-zoom">
+                            <img src="/Users/ummeabiha/.gemini/antigravity/brain/f07da684-45fa-43f1-b4c1-66131cb65364/uploaded_media_3_1771722794711.png"
+                                alt="Hypocalcemia" class="collage-img">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- The Hypothesis (New) -->
+            <section id="hypothesis" class="content-section">
+                <span class="section-label">02 The Hypothesis</span>
+                <h2 class="section-title">Two Bets, One Product</h2>
+                <p class="text-block">
+                    A great product sits at the intersection of a market bet and engineering bets. Here's
+                    exactly what
+                    we wagered — and how we planned to know if we were wrong.
+                </p>
+
+                <!-- PM Hypothesis highlighted first -->
+                <div class="card card--secondary">
+                    <div class="badge-container">
+                        <span class="research-badge"
+                            style="background: var(--accent-primary); color: #fff; border: none;">Market Bet
+                            Hypothesis</span>
+                    </div>
+                    <h4>Operator Dependency Blocked Nurses. Accuracy Wins Clinicians.</h4>
+                    <p>
+                        We hypothesized that adoption would fail not because of accuracy gaps, but because of
+                        <strong>operator dependency</strong>. Existing handheld devices required nurses to
+                        charge,
+                        sanitize, and hold the device at a precise angle, a <strong>5–6 minute fragile
+                            ritual</strong>
+                        that introduced operator bias the moment the angle shifted.
+                        If a wearable could deliver a reading in under <strong>20 seconds with zero handling
+                            protocol</strong>, frictionless adoption would follow — regardless of whether
+                        accuracy was
+                        slightly better than a blood test.
+                        <br><br>
+                        Additionally, we hypothesized that in the <strong>treatment monitoring phase</strong>,
+                        superior
+                        accuracy in tracking jaundice trends would make us the preferred clinical choice for
+                        neonatologists deciding when to start or stop phototherapy treatment.
+                        <br><br>
+                        <em class="accent-text">Two adoption paths: Frictionless workflow for
+                            nurses. Superior treatment monitoring for clinicians.</em>
+                    </p>
+                    <div class="evidence-block"
+                        style="margin-top: 1.5rem; background: rgba(217, 119, 6, 0.05); border-left: 3px solid var(--accent-secondary); padding: 1rem; border-radius: 0 8px 8px 0;">
+                        <div class="badge-container" style="margin-bottom: 0.5rem;">
+                            <span class="research-badge" style="font-size: 0.6rem;">📋 Evidence — NICU
+                                Shadowing</span>
+                        </div>
+                        <p style="font-size: 0.95rem; color: var(--text-secondary);">During high-census
+                            shifts, nurses skipped handheld readings entirely, the 5–6 minute setup ritual was
+                            incompatible with ward pace.</p>
+                    </div>
+                    <div class="evidence-block"
+                        style="margin-top: 1rem; background: rgba(37, 99, 235, 0.05); border-left: 3px solid var(--accent-primary); padding: 1rem; border-radius: 0 8px 8px 0;">
+                        <div class="badge-container" style="margin-bottom: 0.5rem;">
+                            <span class="research-badge"
+                                style="font-size: 0.6rem; background: var(--accent-primary); color: #fff; border: none;">✓
+                                Validation Signal</span>
+                        </div>
+                        <p style="font-size: 0.95rem; color: var(--text-secondary);">Nurse adoption &gt;80%
+                            in pilot wards within 4 weeks, with zero training sessions required.</p>
+                    </div>
+                </div>
+
+                <div class="card card--critical" style="margin-top: 2rem; background: #0f172a; color: #fff;">
+                    <div class="badge-container">
+                        <span class="research-badge"
+                            style="background: var(--accent-critical); color: #fff; border: none;">Strategic
+                            Risk
+                            Accepted</span>
+                    </div>
+                    <h4 style="color: #fff;">We Bet on Physics That Had Never Been Proven in a Wearable at
+                        Scale.</h4>
+                    <p style="color: #cbd5e1;">
+                        We bet on <strong style="color: var(--accent-secondary);">spectroscopy-based multi-site
+                            sensing</strong> at a
+                        time when no peer-reviewed device had successfully removed skin-tone bias using this
+                        method.
+                        <br><br>
+                        Compounding this, we were operating under a <strong
+                            style="color: var(--accent-secondary);">fixed grant
+                            timeline</strong>. A failed clinical trial would terminate funding with no second
+                        attempt.
+                    </p>
+                </div>
+
+                <p class="text-block" style="color: #666;">
+                    The market hypothesis only held if the physics held. Without cracking both of these
+                    engineering
+                    bets, the "frictionless adoption" promise was empty, and the accuracy story for
+                    neonatologists
+                    would fall apart entirely.
+                </p>
+                <div class="insight-grid">
+                    <div class="insight-card hypothesis-card">
+                        <span class="research-badge research-badge--blue"
+                            style="font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 3px 8px; border-radius: 20px; display: inline-block; margin-bottom: 0.75rem;">Engineering
+                            Bet 1</span>
+                        <h4>The Multi-Site Signal Hypothesis</h4>
+                        <p>If we capture <strong>light patterns (spectral signals)</strong> from
+                            <strong>multi-sites</strong>
+                            (forehead, sternum, foot)
+                            simultaneously using a patch, we can triangulate the true bilirubin value, canceling
+                            out the
+                            "noise" of skin pigmentation and motion.
+                        </p>
+                    </div>
+                    <div class="insight-card hypothesis-card">
+                        <span class="research-badge research-badge--blue"
+                            style="font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 3px 8px; border-radius: 20px; display: inline-block; margin-bottom: 0.75rem;">Engineering
+                            Bet 2</span>
+                        <h4>Recalibrating the Gold Standard</h4>
+                        <p>We wouldn't just match the Gold Standard (blood test), we would
+                            <strong>recalibrate</strong>
+                            it.
+                            By mapping the known errors of blood tests (like <strong>lab handling
+                                errors</strong>), we
+                            trained
+                            our device to outsmart the flaws of the standard itself.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Strategy & Alignment (Enhanced) -->
+            <section id="strategy" class="content-section">
+                <span class="section-label">03 Strategy</span>
+                <h2 class="section-title">Forging a Vision Amidst Conflict</h2>
+
+                <div
+                    style="background: linear-gradient(135deg, rgba(37,99,235,0.08), rgba(217,119,6,0.06)); border-left: 4px solid var(--accent-primary); padding: 1.5rem 2rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem;">
+                    <p
+                        style="font-size: 1.2rem; font-weight: 700; color: var(--accent-primary); margin: 0 0 0.5rem 0; text-transform: uppercase; letter-spacing: 1px; font-size: 0.75rem;">
+                        Product Vision</p>
+                    <p
+                        style="font-size: 1.3rem; font-style: italic; color: #1a1a1a; margin: 0; line-height: 1.5; font-weight: 600;">
+                        "Every newborn in India — regardless of skin tone, location, or hospital tier — receives
+                        accurate, non-invasive jaundice screening within seconds of birth."
+                    </p>
+                </div>
+
+                <p class="text-block">
+                    I defined this vision to position ShishuCare as the <strong>"Standard of Care for
+                        Non-Invasive
+                        Neonatal Screening"</strong> — a product that doesn't just screen, but guides
+                    <strong>treatment
+                        decisions</strong> in real time.
+                    But the path to this vision was blocked by a fundamental tension:
+                    <strong>Neonatologists</strong> demanded "ICU-grade accuracy or nothing."
+                    <strong>Engineers</strong> countered with "sensor cost constraints make that impossible."
+                    My job was to find the strategy where <strong>clinical trust and engineering feasibility
+                        could
+                        coexist</strong> — a multi-site spectroscopy approach validated against the gold
+                    standard's own
+                    known errors.
+                </p>
+
+                <h3 style="margin-top: 3rem; margin-bottom: 1rem; font-size: 1.5rem; color: #1a1a1a;">
+                    Stakeholder Map
+                </h3>
+                <p class="text-block">
+                    Navigating the Indian healthcare ecosystem required identifying not just the user, but the
+                    buyer,
+                    the
+                    decision maker, and the influencer.
+                </p>
+
+                <p class="text-block"
+                    style="text-align: center; margin: 3rem 0; color: #1a1a1a; font-weight: 800; max-width: 100%;">
+                    <span style="font-size: 1.8rem; line-height: 1.4;">
+                        Who controls adoption— the user, the regulator, or the funder?
+                    </span>
+                </p>
+
+                <div class="image-container" style="margin-top: 2rem;">
+                    <img src="/Users/ummeabiha/.gemini/antigravity/brain/8502c298-f4b7-467e-ba93-d37b5768d0d1/uploaded_media_1771733202576.png"
+                        alt="Indian Neonatal Health Nexus Flowchart" class="project-image"
+                        style="margin: 0; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                </div>
+
+                <div class="image-container">
+                    <h3 style="font-size: 1.8rem; margin-bottom: 1rem; font-weight: 800; font-family: inherit;">
+                        Neonatal Health Nexus of India</h3>
+                    <div style="position: relative; display: inline-block; width: 100%;">
+                        <img src="/Users/ummeabiha/.gemini/antigravity/brain/8502c298-f4b7-467e-ba93-d37b5768d0d1/uploaded_media_1771733567333.png"
+                            alt="Neonatal Health Nexus of India Full Ecosystem Flowchart" class="project-image"
+                            style="margin: 0; display: block;">
+                        <div
+                            style="position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); white-space: nowrap; font-size: 1.1rem; font-weight: 700; color: #1a1a1a; background: rgba(255,255,255,0.85); padding: 6px 20px; border-radius: 6px; letter-spacing: 0.5px; text-align: center;">
+                            120+ Stakeholder Conversations
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="aha-moment">
+                    "Aha moment — A device is adopted not when it works, but when <span>clinicians trust</span>
+                    it,
+                    <span>regulators
+                        legitimize</span> it, and <span>hospital economics can justify</span> it."
+                </div>
+                <p class="text-block">
+                    <strong>Ecosystem Analysis:</strong>
+                    <br>• <strong>Neonatologists (Decision Makers):</strong> Care about Clinical Validity & Data
+                    granularity.
+                    <br>• <strong>Nurses (Users):</strong> Care about "Zero Friction" & Workflow speed.
+                    <br>• <strong>Hospital Admin (Buyers):</strong> Care about Cost, Maintenance, and Asset
+                    tracking.
+                </p>
+
+                <div class="insight-grid">
+                    <div class="card">
+                        <div class="badge-container">
+                            <span class="research-badge research-badge--blue">Neonatologists</span>
+                        </div>
+                        <p>That a <em>non-invasive</em> approach could be trusted for <strong>treatment
+                                decisions</strong>
+                            — not just screening. I proposed dual validation: against serum bilirubin
+                            <em>and</em>
+                            against tracked phototherapy outcomes.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <div class="badge-container">
+                            <span class="research-badge research-badge--blue">Hospital Admin</span>
+                        </div>
+                        <p>That the higher upfront cost was offset by <strong>reduced lab orders and nurse time
+                                savings</strong> —
+                            shifting the conversation from price to total cost of care.</p>
+                    </div>
+                    <div class="card">
+                        <div class="badge-container">
+                            <span class="research-badge research-badge--blue">Grant Committee</span>
+                        </div>
+                        <p>That the market size justified the clinical risk. I built a segmented market model —
+                            <strong>44,000
+                                private hospitals</strong> vs. <strong>37,725 govt facilities</strong>.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <div class="badge-container">
+                            <span class="research-badge research-badge--blue">Engineering Team</span>
+                        </div>
+                        <p>That "recalibrating against the gold standard's known errors" was a valid scientific
+                            strategy
+                            — not a
+                            workaround.</p>
+                    </div>
+                </div>
+
+                <!-- INAP Strategic Alignment -->
+                <div class="card card--secondary" style="display: flex; align-items: center; gap: 2rem;">
+                    <img src="/Users/ummeabiha/.gemini/antigravity/brain/8502c298-f4b7-467e-ba93-d37b5768d0d1/uploaded_media_1_1771731977047.png"
+                        alt="INAP Logo" style="height: 100px; flex-shrink: 0;">
+                    <div>
+                        <h4 style="margin-top: 0;">National Mission Alignment</h4>
+                        <p>
+                            ShishuCare’s product roadmap was designed to directly support the <strong>India
+                                Newborn
+                                Action Plan (INAP)</strong> goal:
+                            <span style="font-weight: 700; font-style: italic;">Single-digit Neonatal
+                                Mortality Rate by
+                                2030.</span>
+                        </p>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="insight-grid">
+                    <div class="insight-card strategy-card">
+                        <h4>Compliance as a Moat</h4>
+                        <p>Navigated "Privacy of Data" concerns from security stakeholders. Designed
+                            <strong>"Audit
+                                Trails"</strong>
+                            into the MVP architecture early to prevent a costly re-write for Class II
+                            compliance.
+                        </p>
+                    </div>
+                    <div class="insight-card strategy-card">
+                        <h4>Stakeholder Alignment</h4>
+                        <p>Facilitated workshops to align clinical requirements with technical feasibility.</p>
+                    </div>
+                </div>
+
+                <!-- Navigating the Ecosystem -->
+                <h3 style="margin-top: 3rem; margin-bottom: 1.5rem; font-size: 1.5rem; color: #1a1a1a;">
+                    Navigating the
+                    Ecosystem: From Lab to Last-Mile</h3>
+
+                <div class="gtm-matrix-container">
+                    <table class="gtm-table">
+                        <thead>
+                            <tr>
+                                <th>Channel</th>
+                                <th>Decision Maker</th>
+                                <th>Mechanism</th>
+                                <th>Insight Gained</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Public (Tertiary)</strong></td>
+                                <td>Medical Superintendent (MS) / Purchase Dept</td>
+                                <td>Government e-Marketplace (GeM) Portal (Central Public Procurement Portal
+                                    (CPPP))
+                                </td>
+                                <td>Requires 3 quotations; decision rests on lowest cost vs. quality specs.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Corporate Hospitals</strong></td>
+                                <td>Group Medical Director / Medical Superintendent (MS)</td>
+                                <td>Direct Purchase / Branch Network</td>
+                                <td>Strict hierarchy; Slow initial entry but enables easy cross-branch scaling.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Public (PHC/CHC)</strong></td>
+                                <td>Block Medical Officer / Chief Medical Officer (CMO) / Health Secretary</td>
+                                <td>Govt Procurement Units</td>
+                                <td>Budget hierarchy: BMO/CMO for small, Health Secretary for big budgets.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Rural (Sub-centers)</strong></td>
+                                <td>Non-Governmental Organizations (NGOs) (supported by WHO/BMGF)</td>
+                                <td>Grant-funded ASHA Training</td>
+                                <td>NGOs fill service gaps; crucial for trust in grassroots communities.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Private Clinics</strong></td>
+                                <td>Doctor / Owner</td>
+                                <td>Local Distributor Networks</td>
+                                <td>Local trust and immediate support are the primary purchase drivers.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="image-container" style="margin-top: 4rem;">
+                    <h3 style="color: #1a1a1a; font-size: 1.5rem; margin-bottom: 1.5rem; font-weight: 700;">
+                        Customer
+                        Segmentation & Market Sizing</h3>
+                    <img src="/Users/ummeabiha/.gemini/antigravity/brain/8502c298-f4b7-467e-ba93-d37b5768d0d1/uploaded_media_1771732169694.png"
+                        alt="Customer Segmentation in India" class="project-image" style="margin: 0;">
+                    <div class="urban-caption">Quantifying the Opportunity: 44,000 Private Hospitals vs. 37,725
+                        Govt
+                        Facilities, targeting early adoption in Tier 1 Corporates.</div>
+                </div>
+            </section>
+
+            <!-- Discover Phase (Enhanced) -->
+            <section id="discover" class="content-section">
+                <span class="section-label">04 Discover</span>
+                <h2 class="section-title">Living in the NICU</h2>
+                <p class="text-block">
+                    We didn't just build a device from a lab; we immersed ourselves in the NICU environment. I
+                    spent
+                    weeks
+                    collaborating closely with neonatologists, nurses, and hardware engineers to understand the
+                    visceral
+                    constraints of neonatal care.
+                </p>
+                <div class="side-effects-collage" style="margin-top: 3rem;">
+                    <div class="collage-grid" style="grid-template-columns: repeat(2, 1fr);">
+                        <div class="collage-item img-hover-zoom">
+                            <img src="research_2.png" alt="Clinical validation in NICU - 8.4 reading"
+                                class="collage-img">
+                            <div class="spot-blur" style="top: 35%; left: 30%; width: 40%; height: 35%;"></div>
+                        </div>
+                        <div class="collage-item img-hover-zoom">
+                            <img src="research_1.png" alt="Multi-site screening research" class="collage-img">
+                            <div class="spot-blur" style="top: 45%; left: 35%; width: 35%; height: 35%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-block">
+                    <strong>Key Insight:</strong> Existing non-invasive devices were sensitive to motion
+                    artifacts and
+                    skin pigmentation variations, leading to high false-positive rates.
+                </p>
+            </section>
+
+            <!-- Prioritization -->
+            <section id="prioritization" class="content-section">
+                <span class="section-label">05 Prioritization</span>
+                <h2 class="section-title">ROI-Driven Roadmap: Impact vs. Effort</h2>
+                <p class="text-block">
+                    In a resource-constrained environment with a single shot at clinical validation,
+                    prioritization
+                    wasn't a planning exercise, it was a <span
+                        style="color: var(--accent-primary); font-weight: 700;">risk management
+                        call.</span> We used an **Impact vs. Effort Matrix** to separate clinical moats from
+                    feature
+                    bloat.
+                </p>
+                <div class="insight-grid">
+                    <div class="card card--primary" style="border-top: 4px solid #16a34a;">
+                        <h4>Quick Wins (High Impact / Low Effort)</h4>
+                        <p><strong>20-Second Screening Protocol:</strong> Reducing screening time from 6 minutes
+                            to 20
+                            seconds was the primary adoption lever for over-burdened nurses.</p>
+                    </div>
+                    <div class="card card--primary" style="border-top: 4px solid #2563eb;">
+                        <h4>Strategic Stakes (High Impact / High Effort)</h4>
+                        <p><strong>Skin-Tone Agnostic ML:</strong> Engineered proprietary algorithms to de-bias
+                            optical
+                            signals, establishing our primary competitive moat against global incumbents.</p>
+                    </div>
+                    <div class="card card--secondary" style="border-top: 4px solid #f59e0b;">
+                        <h4>Tactical (Mid Impact / Mid Effort)</h4>
+                        <p><strong>Regulatory Architecture:</strong> Integrated audit trails into the MVP to
+                            eliminate
+                            post-launch bottlenecks for FDA/CDSCO approval.</p>
+                    </div>
+                    <div class="card card--critical" style="border-top: 4px solid #94a3b8;">
+                        <h4>Cut (Low Impact / Strategic Deferral)</h4>
+                        <p><strong>Wireless Range & Pulse Oximetry:</strong> Deliberately cut these features to
+                            reduce
+                            engineering complexity and protect the core accuracy story during pilot phase.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Design & Develop Phase (Restored) -->
+            <section id="design" class="content-section">
+                <span class="section-label">06 Design & Develop</span>
+                <h2 class="section-title">AI-Driven Signal Denoising</h2>
+                <p class="text-block">
+                    The core innovation of ShishuCare is its intelligent "wearable patch" form factor combined
+                    with AI.
+                    We developed a proprietary ML algorithm to denoise optical signals, filtering out motion
+                    artifacts
+                    and ambient light interference.
+                </p>
+                <img src="https://placehold.co/800x400/e0e0e0/999999?text=Device+Prototype+&+Signal+Processing"
+                    alt="Device Prototype" class="project-image">
+                <p class="text-block">
+                    This required tight collaboration between the hardware team (sensor design) and the software
+                    team
+                    (AI model), which I facilitated as the Technical Product Lead.
+                </p>
+            </section>
+
+            <!-- Trade-offs (Updated with Matrix) -->
+            <section id="tradeoffs" class="content-section">
+                <span class="section-label">07 Trade-offs</span>
+                <h2 class="section-title">Risk vs. Benefit Analysis</h2>
+                <p class="text-block">
+                    Every product decision involves a trade-off. We used a <strong>Risk/Benefit Matrix</strong>
+                    to make
+                    the critical decision on Device Power.
+                </p>
+
+                <div class="insight-grid">
+                    <div class="card card--secondary">
+                        <div class="badge-container">
+                            <span class="research-badge">Option A: Small Form Factor</span>
+                        </div>
+                        <p><strong>Benefit:</strong> Better ergonomics for the baby.</p>
+                        <p style="margin-top: 0.5rem; color: var(--accent-critical);"><strong>Risk:</strong>
+                            Battery
+                            lasts only 6 hours. Device dies mid-monitoring.</p>
+                        <p style="margin-top: 0.5rem;"><span class="research-badge"
+                                style="background: var(--accent-critical); color: #fff; border: none; font-size: 0.6rem;">Severity:
+                                CRITICAL</span></p>
+                    </div>
+                    <div class="card card--primary">
+                        <div class="badge-container">
+                            <span class="research-badge"
+                                style="background: var(--accent-primary); color: #fff; border: none;">Option B:
+                                Larger
+                                Battery (Selected)</span>
+                        </div>
+                        <p><strong>Benefit:</strong> 24-hour continuous monitoring.</p>
+                        <p style="margin-top: 0.5rem;"><strong>Risk:</strong> Slightly bulkier on the neonate's
+                            foot.
+                        </p>
+                        <p style="margin-top: 0.5rem;"><span class="research-badge"
+                                style="background: var(--accent-success); color: #fff; border: none; font-size: 0.6rem;">Severity:
+                                LOW</span></p>
+                    </div>
+                </div>
+
+                <p class="text-block">
+                    <strong>The Decision:</strong> We accepted a slightly larger footprint to ensure 24-hour
+                    continuous
+                    monitoring capability. <strong>"Uninterrupted Data"</strong> was the core safety
+                    requirement,
+                    outweighing the minor ergonomic cost.
+                </p>
+
+                <!-- What We Chose NOT To Do -->
+                <div class="card card--critical" style="margin-top: 2rem;">
+                    <h4 style="color: var(--accent-critical);">What We Chose NOT To Do</h4>
+                    <p style="color: var(--text-secondary);">
+                        Even when neonatologists asked for it, we deliberately chose <strong>not</strong> to
+                        integrate
+                        pulse oximetry in V1. Adding a second parameter would have doubled sensor complexity and
+                        diluted our core accuracy story.
+                        <br><br>
+                        We also cut <strong>wireless range extension</strong> and a <strong>companion mobile
+                            app</strong> — betting that a single, clinically trusted metric (bilirubin) was
+                        more valuable than a feature-rich device with marginal overall accuracy.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Impact / Outcomes -->
+            <section id="impact" class="content-section">
+                <span class="section-label">08 Impact</span>
+                <h2 class="section-title">Outcomes & Validation <span class="evidence-tag">Clinical Benchmark:
+                        Serum
+                        Bilirubin</span></h2>
+                <p class="text-block">
+                    The strategic focus on accuracy and regulatory alignment paid off. We successfully validated
+                    the
+                    device in a tertiary care setting.
+                </p>
+
+                <div class="impact-grid">
+                    <div class="impact-widget">
+                        <strong>↑20%</strong>
+                        <p>Accuracy improvement via AI signal denoising.</p>
+                    </div>
+                    <div class="impact-widget">
+                        <strong>$55k+</strong>
+                        <p>Funding Secured via Technology Development Programme.</p>
+                    </div>
+                    <div class="impact-widget">
+                        <strong>Awards</strong>
+                        <p>National Innovation Awards & Showcase Exhibitions (MoE/ICMR/Conferences).</p>
+                    </div>
+                    <div class="impact-widget">
+                        <strong>IP</strong>
+                        <p>Intellectual Properties: 2 patents and 1 design registration.</p>
+                    </div>
+                    <div class="impact-status">
+                        Clinical validation happening presently
+                    </div>
+                </div>
+            </section>
+
+            <!-- Critical Retrospective (New) -->
+            <section id="retrospective" class="content-section">
+                <span class="section-label">09 Critical Analysis</span>
+                <h2 class="section-title">PM Retrospective: What Went Wrong?</h2>
+                <div class="insight-grid">
+                    <div class="card card--critical">
+                        <h4>The Failure</h4>
+                        <p>Early optical sensors failed on darker skin tones, leading to a 30%
+                            false-positive rate in our first pilot.</p>
+                    </div>
+                    <div class="card card--success">
+                        <h4>The Fix</h4>
+                        <p>We pivoted to a <strong>multi-wavelength sensor array</strong> to normalize for
+                            pigmentation
+                            variations.</p>
+                    </div>
+                </div>
+                <p class="text-block" style="font-weight: 600;">
+                    The Lesson: "Bench testing is not a proxy for Clinical diversity. Inclusive design must be a
+                    safety
+                    requirement, not an edge case."
+                </p>
+            </section>
+
+        </article>
+
+        <!-- Rights-side Sticky Navigation -->
+        <aside class="floating-nav">
+            <ul class="nav-list">
+                <li class="nav-item active"><a href="#problem" style="color:inherit; text-decoration:none;">Problem</a>
+                </li>
+                <li class="nav-item"><a href="#hypothesis" style="color:inherit; text-decoration:none;">Hypothesis</a>
+                </li>
+                <li class="nav-item"><a href="#strategy" style="color:inherit; text-decoration:none;">Strategy</a></li>
+                <li class="nav-item"><a href="#discover" style="color:inherit; text-decoration:none;">Discover</a></li>
+                <li class="nav-item"><a href="#prioritization"
+                        style="color:inherit; text-decoration:none;">Prioritization</a></li>
+                <li class="nav-item"><a href="#design" style="color:inherit; text-decoration:none;">Design</a>
+                </li>
+                <li class="nav-item"><a href="#tradeoffs" style="color:inherit; text-decoration:none;">Trade-offs</a>
+                </li>
+                <li class="nav-item"><a href="#impact" style="color:inherit; text-decoration:none;">Impact</a>
+                </li>
+                <li class="nav-item"><a href="#retrospective"
+                        style="color:inherit; text-decoration:none;">Retrospective</a></li>
+            </ul>
+        </aside>
+
+    </main>
+
+
+
+    <script>
+        // Simple Intersection Observer for Active Nav State
+        const sections = document.querySelectorAll('.content-section');
+        const navItems = document.querySelectorAll('.nav-item');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Remove active class from all
+                    navItems.forEach(item => item.classList.remove('active'));
+
+                    // Add active class to corresponding nav item
+                    const id = entry.target.getAttribute('id');
+                    const activeLink = document.querySelector(`.nav-item a[href="#${id}"]`);
+                    if (activeLink) {
+                        activeLink.parentElement.classList.add('active');
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+
+        sections.forEach(section => observer.observe(section));
+
+        // Impact Widget "Moving" Interaction
+        document.querySelectorAll('.impact-widget').forEach(widget => {
+            widget.addEventListener('click', () => {
+                widget.classList.toggle('moving');
+            });
+        });
+    </script>
+    <script src="protect.js"></script>
+</body>
+
+</html>

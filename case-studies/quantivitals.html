@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantivitals - Case Study | Umme Abiha</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="protect.js" defer></script>
+    <style>
+        /* Custom Gradient for Quantivitals - Teal/Blue */
+        .case-study-hero {
+            background: linear-gradient(135deg, #f0fcfc 0%, #e6f7ff 100%);
+        }
+
+        .project-title {
+            background: linear-gradient(90deg, #1e293b, #0d9488);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .evidence-tag {
+            display: inline-block;
+            background: #f0f0f0;
+            color: #555;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            padding: 4px 8px;
+            border-radius: 4px;
+            margin-left: 1rem;
+            vertical-align: middle;
+            border: 1px solid #ddd;
+        }
+
+        /* Problem Hero Styling from ShishuCare */
+        .problem-hero {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 3rem;
+            background: #ffffff;
+            color: #1a1a1a;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .problem-hero-header {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            background: #f8fafc;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .problem-hero-stat {
+            padding: 1.5rem;
+            text-align: center;
+            border-right: 1px solid #e2e8f0;
+        }
+
+        .problem-hero-stat:last-child {
+            border-right: none;
+        }
+
+        .problem-hero-stat strong {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 0.2rem;
+            color: #1a1a1a;
+        }
+
+        .problem-hero-stat p {
+            font-size: 0.8rem;
+            margin: 0;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.3;
+        }
+
+        .stat-sublabel {
+            display: block;
+            color: #32C8C8;
+            /* Teal accent */
+            font-size: 0.75rem;
+            margin-top: 0.2rem;
+            font-weight: 600;
+        }
+
+        .problem-hero-body {
+            position: relative;
+            padding: 2rem 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .problem-hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 2rem 2.5rem;
+            max-width: 800px;
+        }
+
+        .problem-hero-content h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            color: #0f172a;
+        }
+
+        .problem-hero-content p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #475569;
+            margin: 0;
+        }
+
+        .blue-italic {
+            color: #0d9488;
+            font-style: italic;
+            font-weight: 700;
+        }
+
+        .aha-moment {
+            background: #f0fdfa;
+            border-left: 4px solid #32C8C8;
+            padding: 2rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #115e59;
+            margin: 3rem 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .aha-moment span {
+            color: #0d9488;
+            font-weight: 800;
+        }
+
+        /* Top Impact Strip from ShishuCare */
+        .top-impact-strip {
+            display: flex;
+            align-items: center;
+            background: #f8fafc;
+            border-left: 4px solid #32C8C8;
+            padding: 1rem 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 2rem 0;
+            gap: 1.5rem;
+        }
+
+        .top-impact-label {
+            background: #32C8C8 !important;
+            /* Quantivitals Teal */
+            color: #fff !important;
+            font-size: 0.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 1.2rem 1.5rem;
+            writing-mode: horizontal-tb;
+            /* Simplified for readability */
+            transform: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-right: none;
+        }
+
+        .top-impact-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .top-impact-item {
+            font-size: 0.9rem;
+            color: #475569;
+        }
+
+        .top-impact-item strong {
+            display: block;
+            font-size: 1.2rem;
+            color: #0f172a;
+        }
+
+        @media (max-width: 768px) {
+            .problem-hero-header {
+                grid-template-columns: 1fr;
+            }
+
+            .problem-hero-body {
+                height: 500px;
+            }
+
+            .top-impact-strip {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .top-impact-label {
+                writing-mode: horizontal-tb;
+                transform: none;
+                border-right: none;
+                border-bottom: 1px solid #e2e8f0;
+                padding-bottom: 0.5rem;
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <a href="../index.html" class="back-link">← Back to Portfolio</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="case-study-hero">
+        <div class="hero-content">
+            <div class="client-name">AIIMS Jodhpur and IIT Jodhpur • 2021-Present</div>
+            <h1 class="project-title">Quantivitals: AI-Enhanced Hemoglobin Platform</h1>
+
+            <div class="top-impact-strip">
+                <div class="top-impact-label">Impact</div>
+                <div class="top-impact-items">
+                    <div class="top-impact-item">
+                        <strong>$18,000</strong> MSME Funding Secured
+                    </div>
+                    <div class="top-impact-item">
+                        <strong>₹75,000</strong> Per-Device Value
+                    </div>
+                    <div class="top-impact-item">
+                        <strong>24%</strong> Failure Rate Resolution
+                    </div>
+                    <div class="top-impact-item">
+                        <strong>B2B/B2G</strong> Partnership Strategy
+                    </div>
+                    <div class="top-impact-item">
+                        <strong>IP</strong> Patent Filed (PCT Pending)
+                    </div>
+                </div>
+            </div>
+
+            <p
+                style="font-size: 1.15rem; color: #475569; font-style: italic; text-align: left; max-width: 900px; margin: 1.5rem 0 0; line-height: 1.6; letter-spacing: 0.2px;">
+                Architected a high-throughput, non-invasive diagnostic engine to disrupt the $3.1B lab-testing market;
+                engineered clinical equity by resolving a 24% pulse-oximetry failure rate for dark-skinned patients,
+                reducing unnecessary transfusions and ICU stays.
+            </p>
+
+            <div class="project-meta">
+                <div class="meta-combo-tag">
+                    <strong>Role:</strong> Technical Product Lead — Owned technical-commercial validation, ML
+                    sensor-fusion roadmap, and GTM ecosystem design.
+                </div>
+                <div class="meta-combo-tag">
+                    <strong>Drove:</strong> $18k seed funding • 24.5% detection gap resolution • Non-dilutive capital
+                    optimization • B2B/B2G partnership model.
+                </div>
+                <div class="meta-combo-tag">
+                    <strong>Skills Applied:</strong> Product Strategy • Market Analysis ($3.1B) • Clinical Equity Design
+                    • ML Pipeline Optimization • Stakeholder Negotiation • Regulatory Roadmap (Class B).
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container containing Content + Sticky Nav -->
+    <main class="case-study-container">
+
+        <!-- Left Content Column -->
+        <article class="main-content">
+
+            <!-- Problem Space -->
+            <section id="problem" class="content-section">
+                <span class="section-label">01 The Problem</span>
+                <h2 class="section-title">The Information Gap in Critical Care</h2>
+
+                <div class="problem-hero">
+                    <div class="problem-hero-header">
+                        <div class="problem-hero-stat">
+                            <strong>31%</strong>
+                            <p>Transfusions<br><span class="stat-sublabel">Without Lab Data</span></p>
+                        </div>
+                        <div class="problem-hero-stat">
+                            <strong>24%</strong>
+                            <p>Failure Rate<br><span class="stat-sublabel">In High-Acuity ICUs</span></p>
+                        </div>
+                        <div class="problem-hero-stat">
+                            <strong>35%</strong>
+                            <p>Mortality Rate<br><span class="stat-sublabel">Post-Op Transfusion</span></p>
+                        </div>
+                        <div class="problem-hero-stat">
+                            <strong>41%</strong>
+                            <p>Blood Wastage<br><span class="stat-sublabel">Reactive Over-Treatment</span></p>
+                        </div>
+                    </div>
+                    <div class="problem-hero-body">
+                        <div class="problem-hero-content">
+                            <h3>Real-time monitoring is a race against reactive over-treatment.</h3>
+                            <p>
+                                <strong>31% of transfusions are performed before lab results arrive.</strong> This
+                                delayed assessment
+                                leads to unnecessary transfusions, wastage of donor blood, and increased mortality.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="text-block"
+                    style="text-align: center; font-style: italic; color: #666; margin: 3rem auto; max-width: 800px; font-size: 1.25rem; line-height: 1.6;">
+                    Existing solutions fail where they are needed most: in <span
+                        style="font-weight: 700; color: #0d9488;">dark-skinned patients</span> or those with <span
+                        style="font-weight: 700; color: #0d9488;">low perfusion</span>.
+                </p>
+
+                <div class="insight-grid">
+                    <div class="insight-card">
+                        <h4>The Perfusion Blind Spot</h4>
+                        <p>Currently, pulse-oximeters show a 24.5% detection failure in trauma/ICU patients due to low
+                            blood flow, leaving doctors "flying blind" during critical interventions.</p>
+                    </div>
+                    <div class="insight-card">
+                        <h4>The Cost of Delay</h4>
+                        <p>ICU stay costs can reach ₹33,000 per patient. Reactive blood management extends recovery
+                            periods and increases hospital-wide operational overhead.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Strategy & Alignment -->
+            <section id="strategy" class="content-section">
+                <span class="section-label">02 Strategy</span>
+                <h2 class="section-title">Architecting Clinical Equity</h2>
+
+                <div
+                    style="background: linear-gradient(135deg, rgba(50,200,200,0.08), rgba(0,123,255,0.06)); border-left: 4px solid #32C8C8; padding: 1.5rem 2rem; border-radius: 0 12px 12px 0; margin-bottom: 2rem;">
+                    <p
+                        style="font-size: 0.75rem; font-weight: 700; color: #0d9488; margin: 0 0 0.5rem 0; text-transform: uppercase; letter-spacing: 1px;">
+                        Product Vision</p>
+                    <p
+                        style="font-size: 1.3rem; font-style: italic; color: #1a1a1a; margin: 0; line-height: 1.5; font-weight: 600;">
+                        "To bridge the clinical gap between invasive labs and non-invasive error, ensuring real-time,
+                        objective assessment for every patient, regardless of skin tone or perfusion state."
+                    </p>
+                </div>
+
+                <p class="text-block">
+                    My strategy focused on **Clinical Equity**—designing the machine learning pipeline to specifically
+                    cancel noise from skin pigmentation and low perfusion, turning a common technical failure into our
+                    primary competitive moat.
+                </p>
+
+                <div class="aha-moment">
+                    "Aha moment — High-fidelity bedside monitoring isn't just a clinical upgrade; it's a
+                    <span>Cost-Optimization Engine</span> for hospital administrators."
+                </div>
+
+                <h3 style="margin-top: 3rem; margin-bottom: 1rem; font-size: 1.5rem; color: #1a1a1a;">Stakeholder Map
+                </h3>
+                <p class="text-block">
+                    Navigating from B2B to B2G required aligning three primary stakeholder incentives:
+                </p>
+
+                <div class="insight-grid">
+                    <div class="insight-card">
+                        <h4>Anesthesiologists (Users)</h4>
+                        <p>Need "Zero-Behavior-Change" tools. I prioritized Oral/Esophageal form factors to mimic
+                            catheters they already use.</p>
+                    </div>
+                    <div class="insight-card">
+                        <h4>Hospital Admin (Buyers)</h4>
+                        <p>Need ROI. I positioned the ₹75,000 device as a tool to save ₹33,000 per ICU patient through
+                            reduced stays.</p>
+                    </div>
+                    <div class="insight-card">
+                        <h4>MSME/BIRAC (Funders)</h4>
+                        <p>Need High-Stakes Innovation. I leveraged the 24.5% detection failure of incumbents to justify
+                            a $600k R&D roadmap.</p>
+                    </div>
+                </div>
+
+                <!-- GTM Strategy Matrix -->
+                <h3 style="margin-top: 3rem; margin-bottom: 1.5rem; font-size: 1.5rem; color: #1a1a1a;">Go-To-Market
+                    Ecosystem</h3>
+                <div class="gtm-matrix-container">
+                    <table class="gtm-table">
+                        <thead>
+                            <tr>
+                                <th>Segment</th>
+                                <th>Primary Buyer</th>
+                                <th>Value Proposition</th>
+                                <th>Adoption Lever</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Tertiary Care</strong></td>
+                                <td>Hospital Director</td>
+                                <td>ICU bed-turnover optimization</td>
+                                <td>ROI of ₹33k saved/patient</td>
+                            </tr>
+                            <tr>
+                                <td><strong>B2G (Ambulance)</strong></td>
+                                <td>Health Ministry</td>
+                                <td>Trauma outcome improvement</td>
+                                <td>CDSCO Class B Compliance</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Secondary Care</strong></td>
+                                <td>Owner-Physician</td>
+                                <td>Diagnostic self-sufficiency</td>
+                                <td>Reduction in referral leakage</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Discover Phase -->
+            <section id="discover" class="content-section">
+                <span class="section-label">03 Discover</span>
+                <h2 class="section-title">Clinical Immersion at AIIMS Jodhpur</h2>
+                <p class="text-block">
+                    My discovery phase was rooted in **clinical immersion**. I worked alongside anesthesiologists in
+                    high-pressure environments—surgery, trauma, and the ICU—to identify the "unseen" friction in blood
+                    management.
+                </p>
+                <div style="margin-top: 1rem; margin-bottom: 1rem;">
+                    <!-- Pictures removed per user request -->
+                </div>
+                <p class="text-block">
+                    <strong>Critical Insight:</strong> We found that **31% of blood transfusions** were performed
+                    reactively because lab tests simply didn't arrive fast enough. This wasn't just a sensor problem; it
+                    was an **information-gap problem** that led to higher post-operative mortality and blood wastage.
+                </p>
+            </section>
+
+            <!-- Prioritization -->
+            <section id="prioritization" class="content-section">
+                <span class="section-label">04 Prioritization</span>
+                <h2 class="section-title">Milestone-Based Capital Allocation</h2>
+                <p class="text-block">
+                    With limited initial funding ($18,000), prioritization was about **Value-to-Risk**. I used the
+                    **RICE framework** to ensure every rupee spent bridged the "commercial valley of death" between the
+                    lab and the ICU.
+                </p>
+                <div class="insight-grid">
+                    <div class="insight-card">
+                        <h4>High Impact / Low Effort: Oral Probe</h4>
+                        <p>Prioritized the Oral Probe for V1 because its "one-time measurement" ritual mimics a
+                            thermometer, allowing for zero-training adoption in busy surgeries.</p>
+                    </div>
+                    <div class="insight-card">
+                        <h4>Strategic Choice: ML over Hardware</h4>
+                        <p>Instead of seeking expensive, custom sensors, I prioritized investment in the **Machine
+                            Learning Pipeline** to clean signals from off-the-shelf components.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Design & Develop -->
+            <section id="design" class="content-section">
+                <span class="section-label">05 Design & Develop</span>
+                <h2 class="section-title">Technological Innovation: Sensor Fusion</h2>
+                <p class="text-block">
+                    Our novelty lies in the **machine learning pipeline** that cancels noise, adapts to anatomical
+                    sites, and compensates for clinical lubricants (like lignocaine).
+                </p>
+                <div class="image-container" style="margin-top: 2rem;">
+                    <img src="https://placehold.co/800x400/0f172a/32C8C8?text=ML+Pipeline+Architecture+(Signal+Denoising+→+Sensor+Fusion)"
+                        alt="ML Pipeline Architecture" class="project-image">
+                </div>
+                <p class="text-block">
+                    We fused data from **Optical, Temperature, Electrical, and Motion sensors** into a common sink. This
+                    "multi-parametric" approach is what allowed the device to remain accurate during patient motion and
+                    low-perfusion states.
+                </p>
+            </section>
+
+            <!-- Trade-offs -->
+            <section id="tradeoffs" class="content-section">
+                <span class="section-label">06 Trade-offs</span>
+                <h2 class="section-title">Product Strategy vs. Engineering Idealism</h2>
+                <p class="text-block">
+                    A major product decision was choosing the anatomical sites for the probes. We used a
+                    **Risk-Benefit-Adoption Matrix** to evaluate our options.
+                </p>
+
+                <div class="risk-matrix"
+                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2rem 0; background: #f9f9f9; padding: 1.5rem; border-radius: 12px; border: 1px solid #eee;">
+                    <!-- Option A -->
+                    <div class="matrix-option" style="padding-right: 1rem; border-right: 1px solid #ddd;">
+                        <h4 style="color: #666; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">
+                            Option A: Peripheral (Finger)</h4>
+                        <ul style="margin-top: 1rem; padding-left: 1.2rem; font-size: 0.95rem; color: #444;">
+                            <li style="margin-bottom: 0.5rem;"><strong>Benefit:</strong> High user familiarity; easy
+                                access.</li>
+                            <li style="margin-bottom: 0.5rem; color: #cc0000;"><strong>Risk:</strong> 24% failure rate
+                                in low perfusion (shock/trauma). High contamination risk.</li>
+                            <li><strong>Verdict:</strong> <span
+                                    style="background: #ffebeb; color: #cc0000; padding: 2px 6px; border-radius: 4px; font-size: 0.8rem; font-weight: bold;">REJECTED</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Option B -->
+                    <div class="matrix-option" style="padding-left: 1rem;">
+                        <h4 style="color: #1a1a1a; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">
+                            Option B: Central (Oral/Esophageal)</h4>
+                        <ul style="margin-top: 1rem; padding-left: 1.2rem; font-size: 0.95rem; color: #444;">
+                            <li style="margin-bottom: 0.5rem;"><strong>Benefit:</strong> Stable signals, better response
+                                times, and resilience to low perfusion.</li>
+                            <li style="margin-bottom: 0.5rem;"><strong>Risk:</strong> Higher invasive perception; needs
+                                clinical buy-in.</li>
+                            <li><strong>Verdict:</strong> <span
+                                    style="background: #e6fffa; color: #008060; padding: 2px 6px; border-radius: 4px; font-size: 0.8rem; font-weight: bold;">SELECTED</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p class="text-block">
+                    **The Strategy:** We chose the **Central Site** approach. In critical care, reliability is the only
+                    feature that matters. By using existing form factors (esophageal catheters), we bypassed the
+                    "invasive perception" hurdle.
+                </p>
+            </section>
+
+            <!-- Impact / Outcomes -->
+            <section id="impact" class="content-section">
+                <span class="section-label">07 Impact</span>
+                <h2 class="section-title">Commercial & Clinical Validation</h2>
+
+                <div class="top-impact-strip" style="margin-bottom: 3rem;">
+                    <div class="top-impact-label">Outcomes</div>
+                    <div class="top-impact-items">
+                        <div class="top-impact-item">
+                            <strong>₹1.25 Lakh</strong> CSR Funding (IIT Jodhpur)
+                        </div>
+                        <div class="top-impact-item">
+                            <strong>0.89 R-Squared</strong> ML Model Accuracy
+                        </div>
+                        <div class="top-impact-item">
+                            <strong>Intellectual Properties</strong> Provisional Patent Filed
+                        </div>
+                        <div class="top-impact-item">
+                            <strong>Validated</strong> 25+ Customer Interviews
+                        </div>
+                    </div>
+                </div>
+
+                <p class="text-block">
+                    Our focus on **Market-to-Tech translation** turned a $18k seed grant into a roadmap for a CDSCO
+                    Class B device by 2027.
+                </p>
+
+                <div class="impact-grid">
+                    <div class="impact-item">
+                        <strong>$18k</strong>
+                        <p>Funding secured from MSME through problem-validation evidence.</p>
+                    </div>
+                    <div class="impact-item">
+                        <strong>₹33k</strong>
+                        <p>Projected savings per ICU stay through real-time monitoring.</p>
+                    </div>
+                    <div class="impact-item">
+                        <strong>Class B</strong>
+                        <p>Roadmap established for regulatory approval and market launch.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Critical Retrospective -->
+            <section id="retrospective" class="content-section"
+                style="background: #f0fafb; padding: 2.5rem; border-left: 4px solid #32C8C8; margin-top: 4rem; border-radius: 0 12px 12px 0;">
+                <span class="section-label" style="color: #0d9488;">08 Critical Analysis</span>
+                <h2 class="section-title" style="color: #115e59;">PM Retrospective: Scaling Innovation</h2>
+                <div class="insight-grid">
+                    <div class="insight-card" style="border-top: 2px solid #32C8C8;">
+                        <h4>The User Acceptance Risk</h4>
+                        <p>Feedback identified "User Acceptance" as a Tier-1 risk. We didn't just ignore it; we embedded
+                            the device into existing workflows to make it a **"Utility"** rather than a "New Task".</p>
+                    </div>
+                    <div class="insight-card" style="border-top: 2px solid #32C8C8;">
+                        <h4>The "Inclusive" Moat</h4>
+                        <p>By solving for dark skin and low perfusion, we built a moat that even global incumbents
+                            (Masimo) were struggling with, positioning us perfectly for the B2G/National scale-up.</p>
+                    </div>
+                </div>
+                <p class="text-block" style="margin-top: 1.5rem; font-weight: 600; color: #134e4a;">
+                    The Strategic Lesson: "Success in MedTech isn't about the coolest sensor; it's about the most
+                    reliable decision-support tool. Alignment on ROI and Workflow is what closes the deal."
+                </p>
+            </section>
+
+        </article>
+
+        <!-- Rights-side Sticky Navigation -->
+        <aside class="floating-nav">
+            <ul class="nav-list">
+                <li class="nav-item active"><a href="#problem" style="color:inherit; text-decoration:none;">Problem</a>
+                </li>
+                <li class="nav-item"><a href="#strategy" style="color:inherit; text-decoration:none;">Strategy</a></li>
+                <li class="nav-item"><a href="#discover" style="color:inherit; text-decoration:none;">Discover</a></li>
+                <li class="nav-item"><a href="#prioritization"
+                        style="color:inherit; text-decoration:none;">Prioritization</a></li>
+                <li class="nav-item"><a href="#design" style="color:inherit; text-decoration:none;">Design</a></li>
+                <li class="nav-item"><a href="#tradeoffs" style="color:inherit; text-decoration:none;">Trade-offs</a>
+                </li>
+                <li class="nav-item"><a href="#impact" style="color:inherit; text-decoration:none;">Impact</a></li>
+                <li class="nav-item"><a href="#retrospective"
+                        style="color:inherit; text-decoration:none;">Retrospective</a></li>
+            </ul>
+        </aside>
+
+    </main>
+
+
+
+    <script>
+        // Simple Intersection Observer for Active Nav State
+        const sections = document.querySelectorAll('.content-section');
+        const navItems = document.querySelectorAll('.nav-item');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Remove active class from all
+                    navItems.forEach(item => item.classList.remove('active'));
+
+                    // Add active class to corresponding nav item
+                    const id = entry.target.getAttribute('id');
+                    const activeLink = document.querySelector(`.nav-item a[href="#${id}"]`);
+                    if (activeLink) {
+                        activeLink.parentElement.classList.add('active');
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+
+        sections.forEach(section => observer.observe(section));
+    </script>
+    <script src="protect.js"></script>
+</body>
+
+</html>
