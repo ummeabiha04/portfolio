@@ -26,9 +26,9 @@ const portfolioData = {
         stats: [
             { label: "Translational Funding Secured", value: "US$ 72K+" },
             { label: "MedTech R&D Experience", value: "5+ Years" },
-            { label: "Intellectual Properties", value: "6" },
-            { label: "Peer Reviewed Publications", value: "19+" },
-            { label: "Research Citations", value: "153" }
+            { label: "Intellectual Properties", value: "6", link: "#recognition" },
+            { label: "Peer Reviewed Publications", value: "19+", link: "https://scholar.google.com/citations?hl=en&user=S5GISogAAAAJ&view_op=list_works&sortby=pubdate" },
+            { label: "Research Citations", value: "154", link: "https://scholar.google.com/citations?hl=en&user=S5GISogAAAAJ&view_op=list_works&sortby=pubdate" }
         ],
         bio: [
             "I am a MedTech Product Manager working at the intersection of Clinical Device & SaMD Development and AI-Driven Healthcare Innovation. With 5+ years of experience building AI-driven MedTech products, I specialize in taking ideas from 0 → 1 — transforming complex clinical challenges into validated, deployable solutions.",

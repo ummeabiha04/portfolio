@@ -28,12 +28,24 @@ const Views = {
             
             <!-- Professional Impact Stats -->
             <div class="stats-strip" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); margin-top: 2.5rem;">
-                ${portfolioData.about.stats.map(stat => `
-                    <div style="display: flex; flex-direction: column; gap: 0.25rem; text-align: center;">
+                ${portfolioData.about.stats.map(stat => {
+                    const inner = `
                         <span style="font-size: 1.8rem; font-weight: 800; color: var(--color-accent);">${stat.value}</span>
                         <span style="font-size: 0.8rem; color: var(--color-accent); text-transform: uppercase; letter-spacing: 1px; line-height: 1.4; opacity: 0.9;">${stat.label}</span>
-                    </div>
-                `).join('')}
+                    `;
+                    if (stat.link) {
+                        return `
+                    <a href="${stat.link}" target="_blank" rel="noopener noreferrer"
+                       style="display: flex; flex-direction: column; gap: 0.25rem; text-align: center; text-decoration: none; cursor: pointer; transition: opacity 0.2s ease;"
+                       onmouseover="this.style.opacity='0.75'" onmouseout="this.style.opacity='1'">
+                        ${inner}
+                    </a>`;
+                    }
+                    return `
+                    <div style="display: flex; flex-direction: column; gap: 0.25rem; text-align: center;">
+                        ${inner}
+                    </div>`;
+                }).join('')}
             </div>
             
             <div style="text-align: center; border-bottom: 1px solid var(--color-border); padding: 1rem 0;">
@@ -515,7 +527,7 @@ const Views = {
                                         <div class="card-date">${index + 1}. ${pub.year} | ${pub.journal}</div>
                                         <h3 class="card-title">${pub.title}</h3>
                                         <p class="card-desc">${pub.authors}</p>
-                                        <a href="${pub.link}" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent); font-size: 0.9rem; margin-top: 0.5rem; display: inline-block;">Read Paper &rarr;</a>
+                                        ${pub.link && pub.link !== '#' ? `<a href="${pub.link}" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent); font-size: 0.9rem; margin-top: 0.5rem; display: inline-block;">Read Paper &rarr;</a>` : ''}
                                     </div>
                                 `).join('')}
                         </div>
@@ -737,7 +749,7 @@ const Views = {
                                     <div class="card-date">${index + 1}. ${pub.year} | ${pub.journal}</div>
                                     <h3 class="card-title">${pub.title}</h3>
                                     <p class="card-desc">${pub.authors}</p>
-                                    <a href="${pub.link}" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent); font-size: 0.9rem; margin-top: 0.5rem; display: inline-block;">Read Paper &rarr;</a>
+                                    ${pub.link && pub.link !== '#' ? `<a href="${pub.link}" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent); font-size: 0.9rem; margin-top: 0.5rem; display: inline-block;">Read Paper &rarr;</a>` : ''}
                                 </div>
                             `).join('')}
                     </div>
