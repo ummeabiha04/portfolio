@@ -51,7 +51,7 @@ const portfolioData = {
     education: [
         {
             degree: "PhD in Medical Technology",
-            institution: "Indian Institute of Technology, Jodhpur & AIIMS, Jodhpur, India",
+            institution: "Indian Institute of Technology (IIT), Jodhpur & All India Institute of Medical Sciences (AIIMS), Jodhpur, India",
             year: "2021 – 2026",
             details: "(CGPA: 8.31)"
         },
@@ -75,7 +75,7 @@ const portfolioData = {
     experience: [
         {
             title: "Technical Product Lead",
-            organization: "IIT Jodhpur & AIIMS Jodhpur, India",
+            organization: "Indian Institute of Technology (IIT), Jodhpur & All India Institute of Medical Sciences (AIIMS), Jodhpur, India",
             year: "Aug 2021 – Present"
         },
         {
@@ -96,12 +96,12 @@ const portfolioData = {
         },
         {
             title: "Research Scholar",
-            organization: "NICPR-ICMR, India",
+            organization: "National Institute of Cancer Prevention and Research - Indian Council of Medical Research (NICPR-ICMR), India",
             year: "Dec 2020 – May 2021"
         },
         {
             title: "Research Scholar",
-            organization: "Amity University, Noida, India",
+            organization: "National Institute of Cancer Prevention and Research - Indian Council of Medical Research (NICPR-ICMR), India",
             year: "2018 – 2019"
         }
     ],
