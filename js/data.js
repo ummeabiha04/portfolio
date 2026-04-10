@@ -72,7 +72,7 @@ const portfolioData = {
     ],
     experience: [
         {
-            title: "Technical Product Lead",
+            title: "Senior Research Fellow | Technical Product Lead",
             organization: "Indian Institute of Technology (IIT), Jodhpur & All India Institute of Medical Sciences (AIIMS), Jodhpur, India",
             year: "Aug 2021 – Present"
         },
