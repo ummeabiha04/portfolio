@@ -1,11 +1,38 @@
+// ── Toggle Testimonial Read More / Read Less ──────────────────
+window.toggleTestimonial = function (btn) {
+    const card = btn.closest('.testimonial-card');
+    if (!card) return;
+    const shortText = card.querySelector('.short-text');
+    const fullText = card.querySelector('.full-text');
+    if (!shortText || !fullText) return;
+
+    const isExpanded = fullText.style.display !== 'none';
+
+    if (isExpanded) {
+        fullText.style.display = 'none';
+        shortText.style.display = '';
+        btn.textContent = 'Read More';
+    } else {
+        fullText.style.display = '';
+        shortText.style.display = 'none';
+        btn.textContent = 'Read Less';
+    }
+};
+
+// ── Helper: how many items visible based on screen width ──────
+function getVisibleCount() {
+    return window.innerWidth <= 768 ? 1 : 3;
+}
+
 window.initProjectHighlights = function () {
     let offset = 0;
     const total = 5;
-    const visible = 3;
-    const maxOffset = total - visible; // = 2
+    let autoPlayTimer = null;
 
-    window.shiftProjectHighlights = function (dir) {
-        offset = Math.max(0, Math.min(maxOffset, offset + dir));
+    function reflow() {
+        const visible = getVisibleCount();
+        const maxOffset = total - visible;
+        offset = Math.min(offset, Math.max(0, maxOffset));
 
         document.querySelectorAll('.ph-card').forEach(card => {
             const idx = parseInt(card.dataset.phIndex);
@@ -20,53 +47,115 @@ window.initProjectHighlights = function () {
         document.querySelectorAll('.ph-dot').forEach((dot, i) => {
             dot.style.background = i === offset ? 'var(--color-accent)' : 'var(--color-border)';
         });
+    }
+
+    function stopAutoPlay() {
+        if (autoPlayTimer) {
+            clearInterval(autoPlayTimer);
+            autoPlayTimer = null;
+        }
+    }
+
+    function startAutoPlay() {
+        stopAutoPlay();
+        if (window.innerWidth <= 768) {
+            autoPlayTimer = setInterval(() => {
+                const visible = getVisibleCount();
+                const maxOffset = total - visible;
+                offset = (offset >= maxOffset) ? 0 : offset + 1;
+                reflow();
+            }, 3500);
+        }
+    }
+
+    window.shiftProjectHighlights = function (dir) {
+        const visible = getVisibleCount();
+        const maxOffset = total - visible;
+        offset = Math.max(0, Math.min(maxOffset, offset + dir));
+        reflow();
+        if (window.innerWidth <= 768) startAutoPlay();
     };
+
+    reflow();
+    startAutoPlay();
+
+    window.addEventListener('resize', () => {
+        reflow();
+        startAutoPlay();
+    });
 };
 
 // ── News Carousel ──────────────────────────────────────────────
 window.initNewsCarousel = function () {
     let offset = 0;
-    const items = portfolioData.news;
-    const total = items.length;
-    const visible = 3;
-    const maxOffset = Math.max(0, total - visible);
+    const total = portfolioData.news.length;
+    let autoPlayTimer = null;
 
-    window.shiftNews = function (dir) {
-        offset = Math.max(0, Math.min(maxOffset, offset + dir));
+    function reflow() {
+        const visible = getVisibleCount();
+        const maxOffset = Math.max(0, total - visible);
+        offset = Math.min(offset, maxOffset);
 
         document.querySelectorAll('.news-card').forEach(card => {
             const idx = parseInt(card.dataset.newsIndex);
-            card.style.display = (idx >= offset && idx < offset + visible) ? 'flex' : 'none';
-            // Simple fade effect
+            const show = idx >= offset && idx < offset + visible;
+            card.style.display = show ? 'flex' : 'none';
             card.style.opacity = '0';
             setTimeout(() => {
                 if (card.style.display === 'flex') card.style.opacity = '1';
             }, 50);
         });
 
-        // Update arrows
         const prev = document.getElementById('news-prev');
         const next = document.getElementById('news-next');
-        if (prev) {
-            prev.style.opacity = offset === 0 ? '0.2' : '1';
-            prev.disabled = offset === 0;
-        }
-        if (next) {
-            next.style.opacity = offset === maxOffset ? '0.2' : '1';
-            next.disabled = offset === maxOffset;
-        }
+        if (prev) { prev.style.opacity = offset === 0 ? '0.2' : '1'; prev.disabled = offset === 0; }
+        if (next) { next.style.opacity = offset === maxOffset ? '0.2' : '1'; next.disabled = offset === maxOffset; }
 
-        // Update dots
         document.querySelectorAll('.news-dot').forEach((dot, i) => {
-            const dotIdx = parseInt(dot.dataset.newsDot);
-            dot.style.background = dotIdx === offset ? 'var(--color-accent)' : 'var(--color-border)';
-            dot.style.transform = dotIdx === offset ? 'scale(1.2)' : 'scale(1)';
+            dot.style.background = i === offset ? 'var(--color-accent)' : 'var(--color-border)';
+            dot.style.transform = i === offset ? 'scale(1.2)' : 'scale(1)';
         });
+    }
+
+    function stopAutoPlay() {
+        if (autoPlayTimer) {
+            clearInterval(autoPlayTimer);
+            autoPlayTimer = null;
+        }
+    }
+
+    function startAutoPlay() {
+        stopAutoPlay();
+        // Auto-play only on mobile screens
+        if (window.innerWidth <= 768) {
+            autoPlayTimer = setInterval(() => {
+                const visible = getVisibleCount();
+                const maxOffset = Math.max(0, total - visible);
+                // Loop back to start after reaching the last card
+                offset = offset >= maxOffset ? 0 : offset + 1;
+                reflow();
+            }, 3500);
+        }
+    }
+
+    window.shiftNews = function (dir) {
+        const visible = getVisibleCount();
+        const maxOffset = Math.max(0, total - visible);
+        offset = Math.max(0, Math.min(maxOffset, offset + dir));
+        reflow();
+        // Reset auto-play timer after manual navigation on mobile
+        if (window.innerWidth <= 768) startAutoPlay();
     };
 
-    // Initial state
-    window.shiftNews(0);
+    reflow();
+    startAutoPlay();
+
+    window.addEventListener('resize', () => {
+        reflow();
+        startAutoPlay(); // restart (or stop) based on new screen size
+    });
 };
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -74,6 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('#main-nav a');
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mainNav = document.getElementById('main-nav');
+
 
     // Route Handler
     function handleRoute() {
@@ -191,21 +281,3 @@ document.addEventListener('DOMContentLoaded', () => {
     handleRoute();
 });
 
-// ── Testimonial Toggle ──────────────────────────────────────────
-window.toggleTestimonial = function (btn) {
-    const card = btn.closest('.testimonial-card');
-    const p = card.querySelector('.testimonial-text');
-    const short = p.querySelector('.short-text');
-    const full = p.querySelector('.full-text');
-    const isExpanded = full.style.display !== 'none';
-
-    if (isExpanded) {
-        full.style.display = 'none';
-        short.style.display = 'inline';
-        btn.innerText = 'Read More';
-    } else {
-        full.style.display = 'inline';
-        short.style.display = 'none';
-        btn.innerText = 'Read Less';
-    }
-};

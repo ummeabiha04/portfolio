@@ -2,7 +2,7 @@ const portfolioData = {
     profile: {
         name: "Umme Abiha",
         title: "MedTech Product Manager",
-        tagline: "Translating Complex Clinical Signals into Scalable, AI-Enabled Medical Systems<br>Interdisciplinary Scientist | Clinical Systems Thinker | Product Architect",
+        tagline: "Clinical Systems Thinker | Interdisciplinary Scientist | Product Architect",
         shortBio: "5+ years of experience leading AI-driven MedTech innovations. Proven expertise from 0 → 1 product lifecycle management, cross-functional leadership, and strategic roadmap execution.",
         email: "drummeabiha04@gmail.com",
         linkedin: "https://www.linkedin.com/in/umme-abiha-884296121/",
@@ -32,9 +32,7 @@ const portfolioData = {
         ],
         bio: [
             "I am a MedTech Product Manager working at the intersection of Clinical Device & SaMD Development and AI-Driven Healthcare Innovation. With 5+ years of experience building AI-driven MedTech products, I specialize in taking ideas from 0 → 1 — transforming complex clinical challenges into validated, deployable solutions.",
-            "Trained in the IIT–AIIMS Joint Doctoral Programme in Medical Technology, I developed deep clinical immersion within tertiary hospital settings. Collaborating closely with clinicians, nurses, biomedical engineers, and administrators, I gained a systems-level understanding of healthcare workflows, enabling me to design products grounded in real-world constraints, not assumptions.",
-            "I have led the end-to-end development of multi-signal wearable devices and intelligent diagnostic platforms, from problem discovery and roadmap definition to prototyping, clinical validation, and regulatory strategy (FDA/CDSCO). My work has secured US$ 72,000+ in funding as translational grants, generated 6 intellectual properties, and improved device accuracy by over 20% through AI/ML optimization significantly influencing treatment decisions.",
-            "I think beyond features, balancing usability, safety, scalability, regulatory alignment, and commercial viability. My mission is to build ethical, data-driven healthcare products that create measurable impact, especially in diverse and resource-constrained settings."
+            "Trained in the IIT–AIIMS Joint Doctoral Programme in Medical Technology, I developed deep clinical immersion within tertiary hospital settings. Collaborating closely with clinicians, nurses, biomedical engineers, and administrators, I gained a systems-level understanding of healthcare workflows, enabling me to design products grounded in real-world constraints, not assumptions."
         ],
         skills: [
             "Product Lifecycle Management (0-1)",
@@ -144,14 +142,14 @@ const portfolioData = {
         ]
     },
     operatingPrinciples: [
-        { id: "01", text: "Clinical first, technology second." },
-        { id: "02", text: "Validate the problem before building the solution." },
-        { id: "03", text: "Regulatory strategy begins at ideation." },
-        { id: "04", text: "Accuracy trade-offs must be measured against decision risk." },
-        { id: "05", text: "Adoption risk > technical risk in healthcare." },
-        { id: "06", text: "Cost sensitivity defines emerging market success." },
-        { id: "07", text: "Secondary research sharpens primary conversations." },
-        { id: "08", text: "Users pay for solutions, not sophistication." }
+        { id: "01", text: "Clinical first, technology second.", mobileText: "Clinical first, tech second." },
+        { id: "02", text: "Validate the problem before building the solution.", mobileText: "Validate problem, then solution." },
+        { id: "03", text: "Regulatory strategy begins at ideation.", mobileText: "Regulatory starts at ideation." },
+        { id: "04", text: "Accuracy trade-offs must be measured against decision risk.", mobileText: "Accuracy vs. decision risk." },
+        { id: "05", text: "Adoption risk > technical risk in healthcare.", mobileText: "Adoption risk > technical risk." },
+        { id: "06", text: "Cost sensitivity defines emerging market success.", mobileText: "Cost defines market success." },
+        { id: "07", text: "Secondary research sharpens primary conversations.", mobileText: "Research sharpens conversations." },
+        { id: "08", text: "Users pay for solutions, not sophistication.", mobileText: "Solutions over sophistication." }
     ],
     publications: [
         // 2025 - Published
