@@ -285,7 +285,7 @@ const Views = {
                                         </div>
                                         <div>
                                             <h4 style="font-size: 1rem; color: var(--color-text-main); margin-bottom: 0.15rem; font-weight: 700;">
-                                                ${testimonial.name}
+                                                ${testimonial.name} <span style="margin-left: 0.4rem;">${testimonial.location}</span>
                                             </h4>
                                             <p style="font-size: 0.8rem; color: var(--color-secondary); font-weight: 500; margin: 0;">
                                                 ${testimonial.role}
@@ -332,7 +332,7 @@ const Views = {
                                         </div>
                                         <div>
                                             <h4 style="font-size: 0.85rem; color: #000000; margin: 0; font-weight: 700;">
-                                                ${testimonial.name}
+                                                ${testimonial.name} <span style="margin-left: 0.3rem;">${testimonial.location}</span>
                                             </h4>
                                             <p style="font-size: 0.7rem; color: var(--color-secondary); font-weight: 500; margin: 0;">
                                                 ${testimonial.role}
@@ -595,7 +595,7 @@ const Views = {
                                             </div>
                                             <div>
                                                 <h4 style="font-size: 1rem; color: var(--color-text-main); margin-bottom: 0.15rem; font-weight: 700;">
-                                                    ${testimonial.name}
+                                                    ${testimonial.name} <span style="margin-left: 0.4rem;">${testimonial.location}</span>
                                                 </h4>
                                                 <p style="font-size: 0.8rem; color: var(--color-secondary); font-weight: 500; margin: 0;">
                                                     ${testimonial.role}
@@ -642,7 +642,7 @@ const Views = {
                                             </div>
                                             <div>
                                                 <h4 style="font-size: 0.85rem; color: #1a1a1a; margin: 0; font-weight: 700;">
-                                                    ${testimonial.name}
+                                                    ${testimonial.name} <span style="margin-left: 0.3rem;">${testimonial.location}</span>
                                                 </h4>
                                                 <p style="font-size: 0.7rem; color: var(--color-secondary); font-weight: 500; margin: 0;">
                                                     ${testimonial.role}

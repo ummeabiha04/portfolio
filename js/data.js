@@ -152,7 +152,7 @@ const portfolioData = {
             {
                 name: "Samuel Bharti",
                 role: "Computational Biologist | Ph.D. Candidate @ University of Alabama at Birmingham",
-                location: "🇺🇸",
+                location: "🇮🇳",
                 relationship: "Colleague",
                 date: "October 9, 2023",
                 text: "I have had the pleasure of working with Umme and can confidently recommend her for any scientific researcher and leadership role. Umme is highly skilled in translational research and innovation. She excels in cancer research and has a strong knack for problem-solving. Umme's proactive approach, adaptability, and teamwork make her an asset. Her positive attitude and dedication to achieving results make her an excellent choice for any team.",
