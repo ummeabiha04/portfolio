@@ -373,8 +373,8 @@ const Views = {
                     </h1>
                 </div>
 
-                <div style="position: relative; width: 90%; aspect-ratio: 16/9; margin: 0 auto;">
-                    <img src="${portfolioData.about.aboutImage}" alt="Community" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
+                <div style="width: 90%; margin: 0 auto;">
+                    <img src="${portfolioData.about.aboutImage}" alt="Community" style="width: 100%; height: auto; object-fit: contain; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); display: block;">
                 </div>
 
                 <div style="display: flex; align-items: center; gap: 1.25rem; margin-top: 0.75rem;">

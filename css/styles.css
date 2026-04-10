@@ -1364,6 +1364,14 @@ p {
         grid-template-columns: 1fr !important;
     }
 
+    /* Fix: testimonial role text inside #hero was inheriting the broad
+       "#hero p { font-size: 1rem }" rule. Lock it back to 0.75rem to
+       match the About page testimonials. */
+    #hero .testimonial-card p {
+        font-size: 0.75rem !important;
+        margin-bottom: 0 !important;
+    }
+
     /* Home publications: 2-col → 1-col */
     .home-pub-grid {
         grid-template-columns: 1fr !important;
