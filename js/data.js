@@ -1,7 +1,7 @@
 const portfolioData = {
     profile: {
         name: "Umme Abiha",
-        title: "MedTech Product Manager",
+        title: "MedTech Product Owner",
         tagline: "Clinical Systems Thinker | Interdisciplinary Scientist | Product Architect",
         shortBio: "5+ years of experience leading AI-driven MedTech innovations. Proven expertise from 0 → 1 product lifecycle management, cross-functional leadership, and strategic roadmap execution.",
         email: "drummeabiha04@gmail.com",

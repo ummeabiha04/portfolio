@@ -949,7 +949,7 @@ const Views = {
                     </div>
                 ` : ''}
                 ${portfolioData.philosophy.content.map(p => `
-                    <p style="font-size: 1.15rem; line-height: 1.8; color: var(--color-text-main); margin-bottom: 2rem; text-align: justify;">
+                    <p style="font-size: 1.15rem; line-height: 1.8; color: #1a1a1a; margin-bottom: 2rem; text-align: justify;">
                         ${p}
                     </p>
                 `).join('')}
