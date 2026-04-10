@@ -189,6 +189,18 @@ window.initTestimonialCarousel = function () {
                     item.style.display = 'none';
                 }
             });
+
+            // Handle LHS Arrow visibility
+            const prevBtn = document.getElementById('testimonial-desktop-prev');
+            if (prevBtn) {
+                if (offset > 0) {
+                    prevBtn.style.display = 'flex';
+                    setTimeout(() => prevBtn.style.opacity = '1', 10);
+                } else {
+                    prevBtn.style.opacity = '0';
+                    setTimeout(() => prevBtn.style.display = 'none', 200);
+                }
+            }
         }
 
         // Update Mobile Items if on mobile
@@ -207,12 +219,16 @@ window.initTestimonialCarousel = function () {
         }
 
         // Button Animation
-        const btnId = isMobile ? 'testimonial-next' : 'testimonial-desktop-next';
-        const nextBtn = document.getElementById(btnId);
-        if (nextBtn) {
+        const btnId = dir > 0 
+            ? (isMobile ? 'testimonial-next' : 'testimonial-desktop-next')
+            : 'testimonial-desktop-prev';
+            
+        const targetBtn = document.getElementById(btnId);
+        if (targetBtn) {
+            const isPrev = btnId === 'testimonial-desktop-prev';
             const baseTransform = isMobile ? '' : 'translateY(-50%)';
-            nextBtn.style.transform = `${baseTransform} scale(1.1)`;
-            setTimeout(() => nextBtn.style.transform = `${baseTransform} scale(1)`, 200);
+            targetBtn.style.transform = `${baseTransform} scale(1.1)`;
+            setTimeout(() => targetBtn.style.transform = `${baseTransform} scale(1)`, 200);
         }
     };
 };

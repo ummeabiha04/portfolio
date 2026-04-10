@@ -253,6 +253,7 @@ const Views = {
                 <!-- Desktop Testimonials (Carousel) -->
                 <div class="testimonials-desktop-wrapper" style="position: relative; margin-top: 3rem;">
                     <!-- Desktop Navigation Arrows -->
+                    <button id="testimonial-desktop-prev" onclick="shiftTestimonials(-1)" style="position: absolute; left: -4rem; top: 50%; transform: translateY(-50%); background: var(--color-bg-alt); border: 1px solid var(--color-border); border-radius: 50%; width: 3.5rem; height: 3.5rem; font-size: 1.2rem; cursor: pointer; color: var(--color-accent); transition: all 0.2s ease; display: none; align-items: center; justify-content: center; z-index: 2; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">&#8592;</button>
                     <button id="testimonial-desktop-next" onclick="shiftTestimonials(1)" style="position: absolute; right: -4rem; top: 50%; transform: translateY(-50%); background: var(--color-bg-alt); border: 1px solid var(--color-border); border-radius: 50%; width: 3.5rem; height: 3.5rem; font-size: 1.2rem; cursor: pointer; color: var(--color-accent); transition: all 0.2s ease; display: flex; align-items: center; justify-content: center; z-index: 2; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">&#8594;</button>
 
                     <div class="testimonials-desktop" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; overflow: hidden;">
@@ -562,6 +563,7 @@ const Views = {
                     <!-- Desktop Testimonials (Carousel) -->
                     <div class="testimonials-desktop-wrapper" style="position: relative; margin-top: 3rem;">
                         <!-- Desktop Navigation Arrows -->
+                        <button id="testimonial-desktop-prev" onclick="shiftTestimonials(-1)" style="position: absolute; left: -4rem; top: 50%; transform: translateY(-50%); background: var(--color-bg-alt); border: 1px solid var(--color-border); border-radius: 50%; width: 3.5rem; height: 3.5rem; font-size: 1.2rem; cursor: pointer; color: var(--color-accent); transition: all 0.2s ease; display: none; align-items: center; justify-content: center; z-index: 2; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">&#8592;</button>
                         <button id="testimonial-desktop-next" onclick="shiftTestimonials(1)" style="position: absolute; right: -4rem; top: 50%; transform: translateY(-50%); background: var(--color-bg-alt); border: 1px solid var(--color-border); border-radius: 50%; width: 3.5rem; height: 3.5rem; font-size: 1.2rem; cursor: pointer; color: var(--color-accent); transition: all 0.2s ease; display: flex; align-items: center; justify-content: center; z-index: 2; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">&#8594;</button>
 
                         <div class="testimonials-desktop" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; overflow: hidden;">
