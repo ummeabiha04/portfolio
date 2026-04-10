@@ -249,48 +249,106 @@ const Views = {
 
             <div id="testimonials" style="margin-top: 4rem; margin-bottom: 4rem; width: 100%;">
                 <h3 class="section-title">Testimonials</h3>
-                <div class="testimonials-grid" style="margin-top: 3rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
-                    ${portfolioData.home.testimonials.map(testimonial => {
+                
+                <!-- Desktop Testimonials (Carousel) -->
+                <div class="testimonials-desktop-wrapper" style="position: relative; margin-top: 3rem;">
+                    <!-- Desktop Navigation Arrows -->
+                    <button id="testimonial-desktop-next" onclick="shiftTestimonials(1)" style="position: absolute; right: -4rem; top: 50%; transform: translateY(-50%); background: var(--color-bg-alt); border: 1px solid var(--color-border); border-radius: 50%; width: 3.5rem; height: 3.5rem; font-size: 1.2rem; cursor: pointer; color: var(--color-accent); transition: all 0.2s ease; display: flex; align-items: center; justify-content: center; z-index: 2; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">&#8594;</button>
+
+                    <div class="testimonials-desktop" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; overflow: hidden;">
+                        ${portfolioData.home.testimonials.map((testimonial, i) => {
         const isLong = testimonial.text.length > 300;
         const shortText = isLong ? testimonial.text.substring(0, 280) + '...' : testimonial.text;
         const fullText = testimonial.text;
 
         return `
-                        <div class="card testimonial-card" style="padding: 1.5rem; background: var(--color-bg-alt); border-radius: 8px; border: 1px solid var(--color-border); position: relative; display: flex; flex-direction: column; box-shadow: 0 2px 10px rgba(0,0,0,0.03);">
-                            <p class="testimonial-text" style="font-size: 0.95rem; color: #000000; line-height: 1.5; margin-bottom: 1.25rem; font-weight: 500; font-family: var(--font-serif); flex-grow: 1; white-space: pre-line;">
-                                <span class="short-text">${shortText}</span>
-                                ${isLong ? `<span class="full-text" style="display: none;">${fullText}</span>` : ''}
-                            </p>
-                            ${isLong ? `
-                                <button onclick="toggleTestimonial(this)" style="background: none; border: none; color: var(--color-accent); font-size: 0.8rem; font-weight: 700; cursor: pointer; padding: 0; margin-bottom: 1.5rem; text-align: left; width: fit-content; text-decoration: underline;">Read More</button>
-                            ` : ''}
-                            <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem;">
-                                ${testimonial.tags.map(tag => `
-                                    <span style="background: #e9f7ef; color: #1e8449; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; display: flex; align-items: center; gap: 0.3rem;">
-                                        ${tag === 'Amazing problem solver' || tag === 'Technically competent' ? '<span style="font-size: 0.85rem;">😊</span>' : ''} ${tag}
-                                    </span>
-                                `).join('')}
-                            </div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--color-border); padding-top: 1.25rem;">
-                                <div style="display: flex; align-items: center; gap: 0.75rem;">
-                                    <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--color-border); display: flex; align-items: center; justify-content: center; overflow: hidden; font-weight: 700; color: var(--color-text-muted); font-size: 0.9rem;">
-                                        ${testimonial.name.split(' ').map(n => n[0]).join('')}
+                            <div class="card testimonial-card testimonial-desktop-item" data-testimonial-index="${i}" style="padding: 1.8rem; background: var(--color-bg-alt); border-radius: 12px; border: 1px solid var(--color-border); position: relative; display: ${i < 3 ? 'flex' : 'none'}; flex-direction: column; box-shadow: 0 2px 15px rgba(0,0,0,0.04); transition: all 0.4s ease; opacity: 1;">
+                                <p class="testimonial-text" style="font-size: 1rem; color: #1a1a1a; line-height: 1.6; margin-bottom: 1.5rem; font-weight: 500; font-family: var(--font-serif); flex-grow: 1; white-space: pre-line;">
+                                    <span class="short-text">${shortText}</span>
+                                    ${isLong ? `<span class="full-text" style="display: none;">${fullText}</span>` : ''}
+                                </p>
+                                ${isLong ? `
+                                    <button onclick="toggleTestimonial(this)" style="background: none; border: none; color: var(--color-accent); font-size: 0.85rem; font-weight: 700; cursor: pointer; padding: 0; margin-bottom: 1.5rem; text-align: left; width: fit-content; text-decoration: underline;">Read More</button>
+                                ` : ''}
+                                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.8rem;">
+                                    ${testimonial.tags.map(tag => `
+                                        <span style="background: #e9f7ef; color: #1e8449; padding: 0.35rem 0.75rem; border-radius: 6px; font-size: 0.8rem; font-weight: 700; display: flex; align-items: center; gap: 0.3rem;">
+                                            ${tag === 'Amazing problem solver' || tag === 'Technically competent' ? '<span style="font-size: 0.9rem;">😊</span>' : ''} ${tag}
+                                        </span>
+                                    `).join('')}
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--color-border); padding-top: 1.5rem;">
+                                    <div style="display: flex; align-items: center; gap: 0.9rem;">
+                                        <div style="width: 45px; height: 45px; border-radius: 50%; background: var(--color-border); display: flex; align-items: center; justify-content: center; overflow: hidden; font-weight: 700; color: var(--color-text-muted); font-size: 1rem;">
+                                            ${testimonial.name.split(' ').map(n => n[0]).join('')}
+                                        </div>
+                                        <div>
+                                            <h4 style="font-size: 1rem; color: var(--color-text-main); margin-bottom: 0.15rem; font-weight: 700;">
+                                                ${testimonial.name}
+                                            </h4>
+                                            <p style="font-size: 0.8rem; color: var(--color-secondary); font-weight: 500; margin: 0;">
+                                                ${testimonial.role}
+                                            </p>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h4 style="font-size: 0.9rem; color: #000000; margin-bottom: 0.1rem; font-weight: 700;">
-                                            ${testimonial.name} ${testimonial.location}
-                                        </h4>
-                                        <p style="font-size: 0.75rem; color: var(--color-secondary); font-weight: 500; margin: 0;">
-                                            ${testimonial.role}
-                                        </p>
+                                    <div style="color: var(--color-text-muted); font-size: 0.8rem; font-weight: 600; opacity: 0.7;">
+                                        ${testimonial.relationship}
                                     </div>
                                 </div>
-                                <div style="color: var(--color-text-muted); font-size: 0.75rem; font-weight: 600; opacity: 0.7;">
-                                    ${testimonial.relationship}
+                            </div>
+                        `}).join('')}
+                    </div>
+                </div>
+
+                <!-- Mobile Testimonials (Stacked & Sliding) -->
+                <div class="testimonials-mobile" style="display: none; flex-direction: column; gap: 1.5rem; margin-top: 2rem;">
+                    <div id="testimonial-carousel-container" style="display: flex; flex-direction: column; gap: 1.5rem; transition: transform 0.4s ease;">
+                        ${portfolioData.home.testimonials.map((testimonial, i) => {
+        const isLong = testimonial.text.length > 300;
+        const shortText = isLong ? testimonial.text.substring(0, 200) + '...' : testimonial.text;
+        const fullText = testimonial.text;
+
+        return `
+                            <div class="card testimonial-card testimonial-mobile-item" data-testimonial-index="${i}" style="padding: 1.25rem; background: var(--color-bg-alt); border-radius: 8px; border: 1px solid var(--color-border); display: ${i < 2 ? 'flex' : 'none'}; flex-direction: column; box-shadow: 0 2px 10px rgba(0,0,0,0.03); opacity: 1; transition: opacity 0.3s ease;">
+                                <p class="testimonial-text" style="font-size: 0.9rem; color: #000000; line-height: 1.5; margin-bottom: 1rem; font-weight: 500; font-family: var(--font-serif); flex-grow: 1; white-space: pre-line;">
+                                    <span class="short-text">${shortText}</span>
+                                    ${isLong ? `<span class="full-text" style="display: none;">${fullText}</span>` : ''}
+                                </p>
+                                ${isLong ? `
+                                    <button onclick="toggleTestimonial(this)" style="background: none; border: none; color: var(--color-accent); font-size: 0.75rem; font-weight: 700; cursor: pointer; padding: 0; margin-bottom: 1rem; text-align: left; width: fit-content; text-decoration: underline;">Read More</button>
+                                ` : ''}
+                                <div style="display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 1rem;">
+                                    ${testimonial.tags.map(tag => `
+                                        <span style="background: #e9f7ef; color: #1e8449; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700; display: flex; align-items: center; gap: 0.2rem;">
+                                            ${tag === 'Amazing problem solver' || tag === 'Technically competent' ? '<span style="font-size: 0.8rem;">😊</span>' : ''} ${tag}
+                                        </span>
+                                    `).join('')}
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--color-border); padding-top: 1rem;">
+                                    <div style="display: flex; align-items: center; gap: 0.6rem;">
+                                        <div style="width: 35px; height: 35px; border-radius: 50%; background: var(--color-border); display: flex; align-items: center; justify-content: center; overflow: hidden; font-weight: 700; color: var(--color-text-muted); font-size: 0.8rem;">
+                                            ${testimonial.name.split(' ').map(n => n[0]).join('')}
+                                        </div>
+                                        <div>
+                                            <h4 style="font-size: 0.85rem; color: #000000; margin: 0; font-weight: 700;">
+                                                ${testimonial.name}
+                                            </h4>
+                                            <p style="font-size: 0.7rem; color: var(--color-secondary); font-weight: 500; margin: 0;">
+                                                ${testimonial.role}
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    `}).join('')}
+                        `}).join('')}
+                    </div>
+                    
+                    <!-- Mobile Navigation Arrow -->
+                    <div style="display: flex; justify-content: center; margin-top: 1.5rem;">
+                        <button id="testimonial-next" onclick="shiftTestimonials(1)" style="background: var(--color-bg-alt); border: 1px solid var(--color-border); border-radius: 50%; width: 2.5rem; height: 2.5rem; font-size: 1rem; cursor: pointer; color: var(--color-accent); display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;">
+                            &#8594;
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -500,48 +558,106 @@ const Views = {
                 <!-- Testimonials replicated from Home Page -->
                 <div id="testimonials" style="margin-top: 2rem; margin-bottom: 5rem; width: 100%;">
                     <h2 class="section-title" style="margin-bottom: 2rem;">Testimonials</h2>
-                    <div class="testimonials-grid" style="margin-top: 3rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
-                        ${portfolioData.home.testimonials.map(testimonial => {
+                    
+                    <!-- Desktop Testimonials (Carousel) -->
+                    <div class="testimonials-desktop-wrapper" style="position: relative; margin-top: 3rem;">
+                        <!-- Desktop Navigation Arrows -->
+                        <button id="testimonial-desktop-next" onclick="shiftTestimonials(1)" style="position: absolute; right: -4rem; top: 50%; transform: translateY(-50%); background: var(--color-bg-alt); border: 1px solid var(--color-border); border-radius: 50%; width: 3.5rem; height: 3.5rem; font-size: 1.2rem; cursor: pointer; color: var(--color-accent); transition: all 0.2s ease; display: flex; align-items: center; justify-content: center; z-index: 2; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">&#8594;</button>
+
+                        <div class="testimonials-desktop" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; overflow: hidden;">
+                            ${portfolioData.home.testimonials.map((testimonial, i) => {
         const isLong = testimonial.text.length > 300;
         const shortText = isLong ? testimonial.text.substring(0, 280) + '...' : testimonial.text;
         const fullText = testimonial.text;
 
         return `
-                            <div class="card testimonial-card" style="padding: 1.5rem; background: var(--color-bg-alt); border-radius: 8px; border: 1px solid var(--color-border); position: relative; display: flex; flex-direction: column; box-shadow: 0 2px 10px rgba(0,0,0,0.03);">
-                                <p class="testimonial-text" style="font-size: 0.95rem; color: #1a1a1a; line-height: 1.5; margin-bottom: 1.25rem; font-weight: 500; font-family: var(--font-serif); flex-grow: 1; white-space: pre-line;">
-                                    <span class="short-text">${shortText}</span>
-                                    ${isLong ? `<span class="full-text" style="display: none;">${fullText}</span>` : ''}
-                                </p>
-                                ${isLong ? `
-                                    <button onclick="toggleTestimonial(this)" style="background: none; border: none; color: var(--color-accent); font-size: 0.8rem; font-weight: 700; cursor: pointer; padding: 0; margin-bottom: 1.5rem; text-align: left; width: fit-content; text-decoration: underline;">Read More</button>
-                                ` : ''}
-                                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem;">
-                                    ${testimonial.tags.map(tag => `
-                                        <span style="background: #e9f7ef; color: #1e8449; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; display: flex; align-items: center; gap: 0.3rem;">
-                                            ${tag === 'Amazing problem solver' || tag === 'Technically competent' ? '<span style="font-size: 0.85rem;">😊</span>' : ''} ${tag}
-                                        </span>
-                                    `).join('')}
-                                </div>
-                                <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--color-border); padding-top: 1.25rem;">
-                                    <div style="display: flex; align-items: center; gap: 0.75rem;">
-                                        <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--color-border); display: flex; align-items: center; justify-content: center; overflow: hidden; font-weight: 700; color: var(--color-text-muted); font-size: 0.9rem;">
-                                            ${testimonial.name.split(' ').map(n => n[0]).join('')}
+                                <div class="card testimonial-card testimonial-desktop-item" data-testimonial-index="${i}" style="padding: 1.8rem; background: var(--color-bg-alt); border-radius: 12px; border: 1px solid var(--color-border); position: relative; display: ${i < 3 ? 'flex' : 'none'}; flex-direction: column; box-shadow: 0 2px 15px rgba(0,0,0,0.04); transition: all 0.4s ease; opacity: 1;">
+                                    <p class="testimonial-text" style="font-size: 1rem; color: #1a1a1a; line-height: 1.6; margin-bottom: 1.5rem; font-weight: 500; font-family: var(--font-serif); flex-grow: 1; white-space: pre-line;">
+                                        <span class="short-text">${shortText}</span>
+                                        ${isLong ? `<span class="full-text" style="display: none;">${fullText}</span>` : ''}
+                                    </p>
+                                    ${isLong ? `
+                                        <button onclick="toggleTestimonial(this)" style="background: none; border: none; color: var(--color-accent); font-size: 0.85rem; font-weight: 700; cursor: pointer; padding: 0; margin-bottom: 1.5rem; text-align: left; width: fit-content; text-decoration: underline;">Read More</button>
+                                    ` : ''}
+                                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.8rem;">
+                                        ${testimonial.tags.map(tag => `
+                                            <span style="background: #e9f7ef; color: #1e8449; padding: 0.35rem 0.75rem; border-radius: 6px; font-size: 0.8rem; font-weight: 700; display: flex; align-items: center; gap: 0.3rem;">
+                                                ${tag === 'Amazing problem solver' || tag === 'Technically competent' ? '<span style="font-size: 0.9rem;">😊</span>' : ''} ${tag}
+                                            </span>
+                                        `).join('')}
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--color-border); padding-top: 1.5rem;">
+                                        <div style="display: flex; align-items: center; gap: 0.9rem;">
+                                            <div style="width: 45px; height: 45px; border-radius: 50%; background: var(--color-border); display: flex; align-items: center; justify-content: center; overflow: hidden; font-weight: 700; color: var(--color-text-muted); font-size: 1rem;">
+                                                ${testimonial.name.split(' ').map(n => n[0]).join('')}
+                                            </div>
+                                            <div>
+                                                <h4 style="font-size: 1rem; color: var(--color-text-main); margin-bottom: 0.15rem; font-weight: 700;">
+                                                    ${testimonial.name}
+                                                </h4>
+                                                <p style="font-size: 0.8rem; color: var(--color-secondary); font-weight: 500; margin: 0;">
+                                                    ${testimonial.role}
+                                                </p>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <h4 style="font-size: 0.9rem; color: var(--color-text-main); margin-bottom: 0.1rem; font-weight: 700;">
-                                                ${testimonial.name} ${testimonial.location}
-                                            </h4>
-                                            <p style="font-size: 0.75rem; color: var(--color-secondary); font-weight: 500; margin: 0;">
-                                                ${testimonial.role}
-                                            </p>
+                                        <div style="color: var(--color-text-muted); font-size: 0.8rem; font-weight: 600; opacity: 0.7;">
+                                            ${testimonial.relationship}
                                         </div>
                                     </div>
-                                    <div style="color: var(--color-text-muted); font-size: 0.75rem; font-weight: 600; opacity: 0.7;">
-                                        ${testimonial.relationship}
+                                </div>
+                            `}).join('')}
+                        </div>
+                    </div>
+
+                    <!-- Mobile Testimonials (Stacked & Sliding) -->
+                    <div class="testimonials-mobile" style="display: none; flex-direction: column; gap: 1.5rem; margin-top: 2rem;">
+                        <div id="testimonial-carousel-container" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                            ${portfolioData.home.testimonials.map((testimonial, i) => {
+        const isLong = testimonial.text.length > 300;
+        const shortText = isLong ? testimonial.text.substring(0, 200) + '...' : testimonial.text;
+        const fullText = testimonial.text;
+
+        return `
+                                <div class="card testimonial-card testimonial-mobile-item" data-testimonial-index="${i}" style="padding: 1.25rem; background: var(--color-bg-alt); border-radius: 8px; border: 1px solid var(--color-border); display: ${i < 2 ? 'flex' : 'none'}; flex-direction: column; box-shadow: 0 2px 10px rgba(0,0,0,0.03); opacity: 1; transition: opacity 0.3s ease;">
+                                    <p class="testimonial-text" style="font-size: 0.9rem; color: #1a1a1a; line-height: 1.5; margin-bottom: 1rem; font-weight: 500; font-family: var(--font-serif); flex-grow: 1; white-space: pre-line;">
+                                        <span class="short-text">${shortText}</span>
+                                        ${isLong ? `<span class="full-text" style="display: none;">${fullText}</span>` : ''}
+                                    </p>
+                                    ${isLong ? `
+                                        <button onclick="toggleTestimonial(this)" style="background: none; border: none; color: var(--color-accent); font-size: 0.75rem; font-weight: 700; cursor: pointer; padding: 0; margin-bottom: 1rem; text-align: left; width: fit-content; text-decoration: underline;">Read More</button>
+                                    ` : ''}
+                                    <div style="display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 1rem;">
+                                        ${testimonial.tags.map(tag => `
+                                            <span style="background: #e9f7ef; color: #1e8449; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700; display: flex; align-items: center; gap: 0.2rem;">
+                                                ${tag === 'Amazing problem solver' || tag === 'Technically competent' ? '<span style="font-size: 0.8rem;">😊</span>' : ''} ${tag}
+                                            </span>
+                                        `).join('')}
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--color-border); padding-top: 1rem;">
+                                        <div style="display: flex; align-items: center; gap: 0.6rem;">
+                                            <div style="width: 35px; height: 35px; border-radius: 50%; background: var(--color-border); display: flex; align-items: center; justify-content: center; overflow: hidden; font-weight: 700; color: var(--color-text-muted); font-size: 0.8rem;">
+                                                ${testimonial.name.split(' ').map(n => n[0]).join('')}
+                                            </div>
+                                            <div>
+                                                <h4 style="font-size: 0.85rem; color: #1a1a1a; margin: 0; font-weight: 700;">
+                                                    ${testimonial.name}
+                                                </h4>
+                                                <p style="font-size: 0.7rem; color: var(--color-secondary); font-weight: 500; margin: 0;">
+                                                    ${testimonial.role}
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        `}).join('')}
+                            `}).join('')}
+                        </div>
+                        
+                        <!-- Mobile Navigation Arrow -->
+                        <div style="display: flex; justify-content: center; margin-top: 1.5rem;">
+                            <button id="testimonial-next" onclick="shiftTestimonials(1)" style="background: var(--color-bg-alt); border: 1px solid var(--color-border); border-radius: 50%; width: 2.5rem; height: 2.5rem; font-size: 1rem; cursor: pointer; color: var(--color-accent); display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;">
+                                &#8594;
+                            </button>
+                        </div>
                     </div>
                 </div>
 

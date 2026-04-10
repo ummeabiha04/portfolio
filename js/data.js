@@ -138,6 +138,36 @@ const portfolioData = {
                 text: "Umme was among those who stood out by showing exceptional adaptability in transitioning from a research-focused mindset to an entrepreneurial one. She led her team from the front and ensured completion of all projects and assignments within time and with full zeal. No doubt she carried the full team along with her.\n\nHer business presentations, delivered confidently, were thoughtful and genuine in content. What set her apart was that she used her depth of technical knowledge and also made vigorous efforts to understand the industry ecosystem. She showed a flair for translating knowledge into practical business opportunities.\n\nThroughout the program, Umme actively engaged with mentors and stakeholders to increase her learning. She consistently applied feedback constructively, refining her work and culminating in a well-executed final presentation that reflected both her learning and her innovative thinking.\n\nUmme navigated the time-intensive and demanding program well. Her openness to learning, ability to inspire peers, and clarity in communication stood out.\n\nShe will be a very suitable fit for leadership roles, particularly in project and innovation management. She would be a valuable asset and resource to any organization she chooses to work with.",
                 tags: ["Technically competent", "Entrepreneurial Mindset", "Leadership", "Valuable Asset", "Adaptable"],
                 image: "./assets/images/testimonials/yadvendra.png"
+            },
+            {
+                name: "Sandeep Sisodiya",
+                role: "Research Associate @ ICMR-National Institute of Cancer Prevention and Research",
+                location: "🇮🇳",
+                relationship: "Senior Colleague",
+                date: "August 12, 2024",
+                text: "Umme is very dedicated, eager to learn, and able to grasp complex research concepts in life sciences. She has strong work ethic and a keen interest in developing new skills. Apart from technical skills, she is an excellent team player who collaborates effectively with colleagues and consistently maintains a positive attitude. She is always willing to take on new challenges and approaches each task with enthusiasm and curiosity. Her proactive approach and problem-solving solid skills make her an invaluable asset to any research team.",
+                tags: ["Dedicated", "Eager to learn", "Team player", "Proactive", "Problem solver"],
+                image: ""
+            },
+            {
+                name: "Samuel Bharti",
+                role: "Computational Biologist | Ph.D. Candidate @ University of Alabama at Birmingham",
+                location: "🇺🇸",
+                relationship: "Colleague",
+                date: "October 9, 2023",
+                text: "I have had the pleasure of working with Umme and can confidently recommend her for any scientific researcher and leadership role. Umme is highly skilled in translational research and innovation. She excels in cancer research and has a strong knack for problem-solving. Umme's proactive approach, adaptability, and teamwork make her an asset. Her positive attitude and dedication to achieving results make her an excellent choice for any team.",
+                tags: ["Translational research", "Leadership", "Problem solver", "Adaptable", "Teamwork"],
+                image: ""
+            },
+            {
+                name: "Harsh Chandra Bhushan",
+                role: "MedTech Innovator @ AIIMS - IIT",
+                location: "🇮🇳",
+                relationship: "Colleague",
+                date: "June 6, 2022",
+                text: "Umme is a highly motivated and resourceful individual. She has a strong will for conducting high quality research, even in difficult circumstances and while facing uncertainties. All these qualities reflect in her publications as well.\n\nShe is also an excellent communicator and is able to lead a team very effectively. She has sparked numerous intellectual discussions that have always greatly benefited our group.\n\nI wholeheartedly recommend Umme for any research position. She is hardworking and inspiring and will definitely be the best addition to any team.",
+                tags: ["Highly motivated", "Resourceful", "Excellent communicator", "Team leader", "Inspiring"],
+                image: ""
             }
         ]
     },

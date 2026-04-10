@@ -156,6 +156,67 @@ window.initNewsCarousel = function () {
     });
 };
 
+// ── Testimonial Carousel (Mobile Only) ─────────────────────────
+window.initTestimonialCarousel = function () {
+    let offset = 0;
+    const total = portfolioData.home.testimonials.length;
+
+    window.shiftTestimonials = function (dir) {
+        const isMobile = window.innerWidth <= 768;
+        const visible = isMobile ? 2 : 3;
+        const totalItems = portfolioData.home.testimonials.length;
+        
+        // Jump by 'visible' to swap the entire set
+        offset = offset + (dir * visible);
+        
+        // Looping logic
+        if (offset >= totalItems) offset = 0;
+        if (offset < 0) {
+            offset = Math.floor((totalItems - 1) / visible) * visible;
+        }
+
+        // Update Desktop Items if on desktop
+        if (!isMobile) {
+            const dItems = document.querySelectorAll('.testimonial-desktop-item');
+            dItems.forEach(item => {
+                const idx = parseInt(item.dataset.testimonialIndex);
+                if (idx >= offset && idx < offset + visible) {
+                    item.style.display = 'flex';
+                    setTimeout(() => { item.style.opacity = '1'; item.style.transform = 'translateY(0)'; }, 10);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(10px)';
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Update Mobile Items if on mobile
+        if (isMobile) {
+            const mItems = document.querySelectorAll('.testimonial-mobile-item');
+            mItems.forEach(item => {
+                const idx = parseInt(item.dataset.testimonialIndex);
+                if (idx >= offset && idx < offset + visible) {
+                    item.style.display = 'flex';
+                    setTimeout(() => item.style.opacity = '1', 10);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Button Animation
+        const btnId = isMobile ? 'testimonial-next' : 'testimonial-desktop-next';
+        const nextBtn = document.getElementById(btnId);
+        if (nextBtn) {
+            const baseTransform = isMobile ? '' : 'translateY(-50%)';
+            nextBtn.style.transform = `${baseTransform} scale(1.1)`;
+            setTimeout(() => nextBtn.style.transform = `${baseTransform} scale(1)`, 200);
+        }
+    };
+};
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -249,6 +310,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             if (typeof window.initNewsCarousel === 'function') {
                 window.initNewsCarousel();
+            }
+            if (typeof window.initTestimonialCarousel === 'function') {
+                window.initTestimonialCarousel();
             }
         }, 200);
     }

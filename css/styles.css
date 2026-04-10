@@ -620,6 +620,14 @@ p {
         margin-bottom: 0.75rem !important;
     }
 
+    /* Testimonials Mobile Toggle */
+    .testimonials-desktop {
+        display: none !important;
+    }
+    .testimonials-mobile {
+        display: flex !important;
+    }
+
     /* Tighten stats strip margin */
     .stats-strip {
         margin-top: 1rem !important;
