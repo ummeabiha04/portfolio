@@ -936,7 +936,7 @@ p {
 
 .footer-bottom-row {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding-top: 2.5rem;
     border-top: 1px solid #333;
