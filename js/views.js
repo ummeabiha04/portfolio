@@ -373,11 +373,11 @@ const Views = {
                     </h1>
                 </div>
 
-                <div style="position: relative; width: 90%; aspect-ratio: 2.35/1; margin: 0 auto;">
-                    <img src="${portfolioData.about.aboutImage}" alt="Community" style="width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
+                <div style="position: relative; width: 90%; aspect-ratio: 16/9; margin: 0 auto;">
+                    <img src="${portfolioData.about.aboutImage}" alt="Community" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
                 </div>
 
-                <div style="display: flex; align-items: center; gap: 1.25rem;">
+                <div style="display: flex; align-items: center; gap: 1.25rem; margin-top: 0.75rem;">
                     <img src="${portfolioData.about.profileImage}" alt="${portfolioData.profile.name}" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
                     <div>
                         <h3 style="margin: 0; font-size: 1.5rem; font-weight: 700; color: #000; letter-spacing: -0.5px;">${portfolioData.profile.name}</h3>
@@ -386,13 +386,14 @@ const Views = {
                 </div>
 
                 <div style="font-size: 1.1rem; line-height: 1.6; color: #1a1a1a;">
-                    <p id="about-mobile-bio-visible">
+                    <p id="about-mobile-bio-visible" style="margin-bottom: 0;">
                         ${portfolioData.about.bio[0].split('. ')[0]}. 
-                        <a href="javascript:void(0)" onclick="document.getElementById('mobile-extra-bio').style.display='block'; this.style.display='none';" style="color: var(--color-accent); text-decoration: underline; font-weight: 600;">Read more</a>
+                        <a href="javascript:void(0)" id="mobile-read-more" onclick="document.getElementById('mobile-extra-bio').style.display='block'; this.style.display='none';" style="color: var(--color-accent); text-decoration: underline; font-weight: 600;">Read more</a>
                     </p>
                     <div id="mobile-extra-bio" style="display: none; margin-top: 0.5rem;">
                         <p style="margin-bottom: 1.2rem;">${portfolioData.about.bio[0].split('. ').slice(1).join('. ')}</p>
                         ${portfolioData.about.bio.slice(1).map(p => `<p style="margin-bottom: 1.2rem;">${p}</p>`).join('')}
+                        <a href="javascript:void(0)" onclick="document.getElementById('mobile-extra-bio').style.display='none'; document.getElementById('mobile-read-more').style.display='inline';" style="color: var(--color-accent); text-decoration: underline; font-weight: 600; display: block; margin-top: -0.5rem; margin-bottom: 1rem;">Read less</a>
                     </div>
                 </div>
 
@@ -408,7 +409,7 @@ const Views = {
 
             <div style="margin-top: 4rem; width: 100%;">
                 <!-- Education + Work Experience side by side -->
-                <div class="about-edu-exp-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 0; margin-bottom: 5rem; align-items: start;">
+                <div class="about-edu-exp-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 0; margin-bottom: 1.5rem; align-items: start;">
 
                     <!-- Work Experience Column -->
                     <div>

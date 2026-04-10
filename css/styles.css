@@ -1582,9 +1582,26 @@ p {
         margin-top: 1rem !important;
     }
 
+    .home-pub-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+
     /* Specific overrides for sections with nested divs having margins */
     #home-publications>div:last-child {
-        margin-top: 1.25rem !important;
+        margin-top: 2rem !important;
+    }
+
+    /* Fix for the Explore Full Research Repository button on mobile */
+    #home-publications > div:last-child a.btn-primary {
+        padding: 0.8rem 1.25rem !important;
+        font-size: 0.75rem !important;
+        width: auto !important;
+        max-width: 90% !important;
+        display: inline-block !important;
+        white-space: normal !important;
+        line-height: 1.4 !important;
+        letter-spacing: 0.5px !important;
     }
 
     .hero-impact-section {
@@ -1621,7 +1638,7 @@ p {
     .about-edu-exp-grid {
         grid-template-columns: 1fr !important;
         gap: 2rem !important;
-        margin-bottom: 4rem !important;
+        margin-bottom: 2rem !important;
     }
 
     .about-edu-exp-grid > div {
