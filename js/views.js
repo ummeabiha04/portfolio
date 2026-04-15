@@ -305,11 +305,11 @@ const Views = {
                 <div class="testimonials-mobile" style="display: none; flex-direction: column; gap: 1.5rem; margin-top: 2rem;">
                     <div id="testimonial-carousel-container" style="display: flex; flex-direction: column; gap: 1.5rem; transition: transform 0.4s ease;">
                         ${portfolioData.home.testimonials.map((testimonial, i) => {
-        const isLong = testimonial.text.length > 300;
-        const shortText = isLong ? testimonial.text.substring(0, 200) + '...' : testimonial.text;
-        const fullText = testimonial.text;
+            const isLong = testimonial.text.length > 300;
+            const shortText = isLong ? testimonial.text.substring(0, 200) + '...' : testimonial.text;
+            const fullText = testimonial.text;
 
-        return `
+            return `
                             <div class="card testimonial-card testimonial-mobile-item" data-testimonial-index="${i}" style="padding: 1.25rem; background: var(--color-bg-alt); border-radius: 8px; border: 1px solid var(--color-border); display: ${i < 2 ? 'flex' : 'none'}; flex-direction: column; box-shadow: 0 2px 10px rgba(0,0,0,0.03); opacity: 1; transition: opacity 0.3s ease;">
                                 <p class="testimonial-text" style="font-size: 0.9rem; color: #000000; line-height: 1.5; margin-bottom: 1rem; font-weight: 500; font-family: var(--font-serif); flex-grow: 1; white-space: pre-line;">
                                     <span class="short-text">${shortText}</span>
@@ -615,11 +615,11 @@ const Views = {
                     <div class="testimonials-mobile" style="display: none; flex-direction: column; gap: 1.5rem; margin-top: 2rem;">
                         <div id="testimonial-carousel-container" style="display: flex; flex-direction: column; gap: 1.5rem;">
                             ${portfolioData.home.testimonials.map((testimonial, i) => {
-        const isLong = testimonial.text.length > 300;
-        const shortText = isLong ? testimonial.text.substring(0, 200) + '...' : testimonial.text;
-        const fullText = testimonial.text;
+            const isLong = testimonial.text.length > 300;
+            const shortText = isLong ? testimonial.text.substring(0, 200) + '...' : testimonial.text;
+            const fullText = testimonial.text;
 
-        return `
+            return `
                                 <div class="card testimonial-card testimonial-mobile-item" data-testimonial-index="${i}" style="padding: 1.25rem; background: var(--color-bg-alt); border-radius: 8px; border: 1px solid var(--color-border); display: ${i < 2 ? 'flex' : 'none'}; flex-direction: column; box-shadow: 0 2px 10px rgba(0,0,0,0.03); opacity: 1; transition: opacity 0.3s ease;">
                                     <p class="testimonial-text" style="font-size: 0.9rem; color: #1a1a1a; line-height: 1.5; margin-bottom: 1rem; font-weight: 500; font-family: var(--font-serif); flex-grow: 1; white-space: pre-line;">
                                         <span class="short-text">${shortText}</span>
@@ -728,32 +728,51 @@ const Views = {
     },
 
     projects: () => `
-        <section class="container fade-in">
-            <h2 class="section-title">Projects</h2>
+        <section class="container fade-in" style="margin-top: -2rem;">
+            <h2 class="section-title" style="margin-bottom: 2rem;">Projects</h2>
+
+            <!-- Project Impact Stats -->
+            <div style="margin-top: 0.5rem; margin-bottom: 0.5rem;">
+                <h3 style="font-size: 0.85rem; color: var(--color-text-muted); font-weight: 500; text-transform: uppercase; letter-spacing: 2px;">Product Impact</h3>
+            </div>
+            <div class="stats-strip" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem; padding: 1.5rem 0; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); margin: 0 0 3rem 0;">
+                ${portfolioData.projectStats.map(stat => `
+                    <div style="display: flex; flex-direction: column; gap: 0.25rem; text-align: center;">
+                        <span style="font-size: 1.8rem; font-weight: 800; color: var(--color-accent);">${stat.value}</span>
+                        <span style="font-size: 0.8rem; color: var(--color-accent); text-transform: uppercase; letter-spacing: 1px; line-height: 1.4; opacity: 0.9;">${stat.label}</span>
+                    </div>
+                `).join('')}
+            </div>
             <div class="card-grid">
                 ${portfolioData.projects.map(proj => `
-                    <div class="card" id="${proj.title.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, '')}" style="display: flex; flex-direction: column; gap: 1.5rem; ${proj.link && proj.link !== '#' ? 'cursor: pointer;' : ''}" ${proj.link && proj.link !== '#' ? `onclick="window.location.href='${proj.link}'"` : ''}>
-                        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                            <div class="card-date">${proj.role}</div>
-                            <h3 class="card-title" style="margin-bottom: 0; color: #1a1a1a;">${proj.title}</h3>
+                    <div class="card" id="${proj.title.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, '')}" style="display: flex; flex-direction: column; gap: 0.75rem; ${proj.link && proj.link !== '#' ? 'cursor: pointer;' : ''}" ${proj.link && proj.link !== '#' ? `onclick="window.location.href='${proj.link}'"` : ''}>
+                        <div style="display: flex; flex-direction: column; gap: 0.2rem;">
+                            <h3 class="card-title" style="color: #1a1a1a; margin-bottom: 0;">${proj.title}</h3>
                         </div>
 
-                        ${proj.video ? `
-                            <div class="project-video-container" style="position: relative; width: 100%; aspect-ratio: 16/9; border-radius: 8px; overflow: hidden; background: #000; box-shadow: 0 4px 20px rgba(0,0,0,0.2);">
+                        <div class="project-card-media" style="position: relative; aspect-ratio: 16/9; overflow: hidden; border-radius: 8px; background: var(--color-bg-alt); box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                            ${proj.video ? `
                                 <video autoplay muted loop playsinline controls poster="${proj.heroImage}" style="width: 100%; height: 100%; object-fit: contain; background: #f5f5f5;">
                                     <source src="${proj.video}" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
-                            </div>
-                        ` : ''}
+                            ` : (proj.secondaryHeroImage ? `
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; height: 100%; width: 100%;">
+                                    <img src="${proj.heroImage}" style="width: 100%; height: 100%; object-fit: cover; border-right: 2px solid #fff;">
+                                    <img src="${proj.secondaryHeroImage}" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                            ` : `
+                                <img src="${proj.heroImage}" alt="${proj.title}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
+                            `)}
+                        </div>
 
-                        <p class="card-desc" style="margin-bottom: 0;">${proj.description}</p>
+                        <p class="card-desc" style="margin-top: 0;">${proj.description}</p>
                         <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: auto;">
-                            ${proj.tech.map(t => `<span style="font-size: 0.75rem; color: var(--color-secondary); border: 1px solid var(--color-border); padding: 2px 8px; border-radius: 4px;">${t}</span>`).join('')}
+                            ${proj.tech.map(t => `<span style="font-size: 0.75rem; color: var(--color-secondary); border: 1px solid var(--color-border); padding: 2px 8px; border-radius: 4px; font-weight: 500;">${t}</span>`).join('')}
                         </div>
                         ${proj.link && proj.link !== '#' ? `
-                        <div style="margin-top: 1rem; text-align: center;">
-                            <a href="${proj.link}" class="btn-primary" style="display: inline-block; padding: 0.6rem 1.2rem; font-size: 0.82rem; background: var(--color-accent); border: none; color: white!important; text-decoration: none; border-radius: 4px; font-weight: 600; white-space: nowrap;">View Full Case Study &rarr;</a>
+                        <div style="margin-top: 0.5rem; text-align: left;">
+                            <a href="${proj.link}" class="btn-primary" style="display: inline-block; padding: 0.6rem 1.2rem; background: var(--color-accent); color: #fff; text-decoration: none; border-radius: 6px; font-weight: 700; font-size: 0.85rem; transition: background 0.3s ease;">${proj.buttonText || 'View Full Case Study'} &rarr;</a>
                         </div>
                         ` : ''}
                     </div>

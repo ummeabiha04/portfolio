@@ -46,6 +46,13 @@ const portfolioData = {
             "Framer"
         ]
     },
+    projectStats: [
+        { label: "MedTech Products Owned", value: "4" },
+        { label: "Adoption Rate", value: ">80%" },
+        { label: "Operational Efficiency Gained", value: "~30%" },
+        { label: "Clinical Accuracy", value: "20%+" },
+        { label: "Demand Pipeline", value: "~$297K" }
+    ],
     education: [
         {
             degree: "PhD in Medical Technology",
@@ -344,42 +351,42 @@ const portfolioData = {
     ],
     projects: [
         {
-            title: "ShishuCare (AI-Enabled Wearable Patch Device)",
+            title: "ShishuCare (AI-Enabled Wearable for Newborn Patients)",
             category: "AI IN NEONATOLOGY",
             storyHeadline: "Can AI screening eliminate the neonatal treatment paradox?",
             heroImage: "assets/images/shishucare_treatment_paradox.png",
             role: "Technical Product & R&D Lead",
-            description: "Developed a 0→1 intelligent wearable device for non-invasive screening and continuous monitoring of neonatal jaundice. Ensured alignment with FDA and CDSCO regulatory pathways.<br><br>Integrated AI-driven diagnostic algorithms for optical signal denoising and device calibration, improving diagnostic accuracy by 20%+. Designed the system for scalable deployment across hospital and low-resource settings.<br><br>Secured ₹50 Lakhs (~US$55,000) in translational funding (TDP-9, TIH IIT Bombay) to accelerate product validation and commercialization.",
+            description: "Developed a 0→1 intelligent wearable for neonatal jaundice screening.<br><br><b>Impact:</b> ↑20% Clinical Accuracy; 2 Patents as MOAT; 6min → 20s Nursing Workflow Speed-up; $55k+ Secured via National Health Mission.",
             tech: ["MedTech", "AI/ML in Healthcare", "Regulatory Strategy (FDA/CDSCO)", "Stakeholder Management", "Product Strategy", "Market Research", "Business Model Design", "Pitching", "Grants", "PRD", "DHF", "Value Proposition"],
             link: "./case-studies/shishucare.html"
         },
         {
-            title: "NICU Nursing Station Dashboard",
+            title: "Optimizing NICU-EHR Dashboards for Nursing Staff",
             category: "CLINICAL SYSTEMS",
             storyHeadline: "How can multi-patient visualization reduce operational risk in critical care?",
             heroImage: "assets/images/nicu_dashboard_preview_v2.png",
             role: "Product Lead",
-            description: "Built a centralized NICU monitoring dashboard enabling real-time multi-patient visualization and integrated clinical data on a single interface. Seamlessly integrated with the ShishuCare wearable ecosystem and mobile app. Reduced operational downtime by one month through workflow-driven UX optimization. Designed with HIPAA-aligned data security architecture.",
+            description: "Built a centralized monitoring dashboard for real-time multi-patient visualization. Optimized clinical workflows, reducing friction points and operational downtime by one month.<br><br><b>Impact:</b> ↓30% Documentation tax; 2.3 hrs saved/shift for 'Patient-First' Care.",
             tech: ["HealthTech", "Clinical Workflow Optimization", "UX/UI Strategy", "System Integration", "Data Security & Compliance", "Product Development"],
             link: "./case-studies/nicu-dashboard.html"
         },
         {
-            title: "Quantivitals – Non-Invasive Hemoglobin & SpO₂ Monitoring Platform",
+            title: "Quantivitals – Non-Invasive Hemoglobin & SpO₂ for ICU Patients",
             category: "NON-INVASIVE TECH",
             storyHeadline: "What if blood draws were no longer necessary for hemoglobin monitoring?",
             heroImage: "assets/images/quantivitals_device_action_1772265034139.png",
             role: "TECHNICAL PRODUCT LEAD",
-            description: "Led the product development of a non-invasive optical monitoring device for continuous hemoglobin and oxygen saturation assessment in critical care. Defined product requirements, system architecture, and regulatory pathway (CDSCO) to translate a clinical pain point into a scalable bedside monitoring solution.<br><br>Drove cross-functional collaboration across engineering and clinical stakeholders to build a deployable, workflow-aligned device designed to reduce dependency on invasive blood draws while maintaining clinical reliability.<br><br>Secured ₹15 Lakhs (~US$18,000) in MSME funding to support product development and validation.",
+            description: "Led development of a non-invasive hemoglobin and SpO₂ monitoring platform.<br><br><b>Impact:</b> 24% Failure Rate Resolution; 2 Patents serving MOAT; $18,000 secured via Ministry of Micro, Small & Medium Enterprises (MSME).",
             tech: ["MedTech Product Development", "Ecosystem Mapping", "Regulatory Strategy (CDSCO)", "Maintaining Design Files", "Pitching", "Grants", "Stakeholder Alignment"],
             link: "./case-studies/quantivitals.html"
         },
         {
-            title: "TremoREST (Wearable Therapeutic Glove for Parkinson’s Tremors)",
+            title: "TremoREST (Wearable Glove for Parkinson’s Tremors)",
             role: "Product & R&D Lead",
             category: "WEARABLE NEUROTECH",
             storyHeadline: "Can a glove restore the stillness Parkinson's steals?",
             heroImage: "./assets/images/tremorest_hero.png",
-            description: "Conceptualized and led the development of TremoREST, a wearable assistive glove designed to reduce resting tremors in patients with Parkinson’s disease.<br><br>Engineered using ergonomic biomechanical principles and breathable, patient-compliant fabric to enable prolonged wear and daily usability. The device focused on non-invasive tremor stabilization through mechanical damping and motion-modulation strategies.<br><br>Designed with a user-centered approach incorporating patient comfort, clinician feedback, and real-world usability constraints to ensure practical deployment in home-care settings.",
+            description: "Developed a wearable assistive glove to stabilize resting tremors in Parkinson’s patients. Focused on patient comfort and biomechanical efficiency for daily usability.<br><br><b>Impact:</b> 60% Success Rate (Restoration in 3/5 patients); 3hr Therapeutic Window; 1 Design Registration as MOAT; Breathable, high-comfort design.",
             tech: ["NeuroTech", "Wearable Therapeutics", "Assistive Medical Devices", "Biomechanics", "Human-Centered Design", "Clinical Need Validation", "Prototype Development", "Product Concept Strategy"],
             link: "#"
         },
@@ -390,9 +397,39 @@ const portfolioData = {
             heroImage: "assets/images/email_triage_hero.png",
             video: "assets/videos/email_triage_demo.mp4",
             role: "AI Product Engineer",
-            description: "Developed an autonomous AI agent using n8n and Groq (Llama 3.1) to triage high-stakes MedTech communications. Engineered a custom logic chain that performs real-time metadata cleaning and intent-based sorting. Pivoted to Groq for 10x faster inference, enabling a seamless 'Verification Layer' that preserves human-in-the-loop integrity while reducing drafting time by 90%.",
+            description: "Engineered an autonomous agent for triage using n8n and Llama 3.1. Developed frictionless communication management for high-stakes MedTech teams.<br><br><b>Impact:</b> 10x Faster Inference; 90% Reduction in Drafting Tasks.",
             tech: ["n8n", "Groq", "Llama 3.1", "Gmail API", "Prompt Engineering", "Workflow Automation", "Human-in-the-loop", "MedTech Operations"],
             link: "#"
+        },
+        {
+            title: "Oncology & Clinical R&D Portfolio",
+            category: "LIFE SCIENCE RESEARCH",
+            storyHeadline: "Bridging AI and Laboratory Research in Oncology",
+            heroImage: "assets/images/saffron_research_1.png",
+            secondaryHeroImage: "assets/images/oscc_histology.jpg",
+            role: "Research Strategy Lead",
+            description: "Deep technical expertise in Oncology AI diagnostics and breast cancer therapeutics. This specialized portfolio focuses on histopathological biomarker validation and anti-carcinogenic cytotoxic studies.",
+            tech: ["Oncology", "Biomarker Validation", "Life Sciences", "AI/ML in Pathology", "In-vitro Analysis", "Research Strategy"],
+            buttonText: "View Projects",
+            link: "./research.html"
+        }
+    ],
+    researchProjects: [
+        {
+            title: "Prediction of Oral Squamous Cell Carcinoma (OSCC)",
+            category: "ONCOLOGY AI",
+            heroImage: "assets/images/oscc_histology.jpg",
+            role: "Research & Product Architect",
+            description: "Validated diagnostic biomarkers in human clinical samples, generating evidence that could inform patient stratification and treatment decisions.",
+            tech: ["AI/ML", "Protein Quantification", "Western Blotting", "Digital Pathology", "Oncology", "Research Strategy", "Product Design", "Clinical Validation"]
+        },
+        {
+            title: "Impact of Crocus sativus on Breast carcinogenesis",
+            category: "ONCOLOGY RESEARCH",
+            heroImage: "assets/images/saffron_research_1.png",
+            role: "MTech Dissertation",
+            description: "Studied saffron's cytotoxic effects on breast cancer cell lines for MTech Thesis. Calculated LD50 values to determine therapeutic potential in oncology.<br><br><b>Impact:</b> Evidence-based research for natural anti-carcinogenic treatments.",
+            tech: ["MTech Thesis", "Cytotoxicity Study", "In-vitro Analysis", "LD50 Calculation", "Oncology", "Research Methodology"]
         }
     ],
     ip: [
